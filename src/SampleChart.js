@@ -17,7 +17,7 @@ const SampleChart = () => {
 
     }
     while (i < 22) {
-        years.push((Number) (years[years.length - 1] + 1).toFixed(0))
+        years.push(((Number) (years[years.length - 1]) + 1).toFixed(0))
         _18_24data.push(calcNumber(_18_24data));
         _25_49data.push(calcNumber(_25_49data));
         _50_74data.push(calcNumber(_50_74data));
@@ -67,7 +67,7 @@ const SampleChart = () => {
       var xAxisInfo = event.axesInfo[0];
       if (xAxisInfo) {
         var dimension = xAxisInfo.value + 1;
-        chartRef.getEchartsInstance().setOption({
+        chartRef.current.getEchartsInstance().setOption({
           series: {
             id: 'pie',
             label: {
@@ -85,7 +85,7 @@ const SampleChart = () => {
 
     return (
         <div className="chart">
-            <ReactEcharts ref={chartRef} option={opts} style={{height: "70vh"}} />
+            <ReactEcharts ref={chartRef} option={opts} style={{height: "70vh"}} onEvents={onEvents} />
           <label for="coef">Pane mingi nr</label>
             <input step="0.005" type="number" value={inputValue} id="coef" onChange={(evt) => setInputValue(evt.target.value)} />
         </div>
