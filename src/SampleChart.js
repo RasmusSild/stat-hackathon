@@ -17,7 +17,7 @@ const SampleChart = () => {
 
     const opts = {
         title: {
-            text: 'Hüpergraafik'
+            text: 'TT332: 15-74-aastaste hõiveseisund elukoha, soo ja vanuserühma järgi'
         },
         tooltip: {
             trigger: 'axis'
