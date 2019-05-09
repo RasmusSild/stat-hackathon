@@ -5,101 +5,56 @@ import echarts from 'echarts';
 const SampleChart = () => {
 
   const opts = {
-    backgroundColor: new echarts.graphic.RadialGradient(0.3, 0.3, 0.8, [{
-      offset: 0,
-      color: '#f7f8fa'
-    }, {
-      offset: 1,
-      color: '#cdd0d5'
-    }]),
     title: {
-      text: '1990 与 2015 年各国家人均寿命与 GDP'
+      text: 'Hüpergraafik'
+    },
+    tooltip: {
+      trigger: 'axis'
     },
     legend: {
-      right: 10,
-      data: ['1990', '2015']
+      data:['15-24','25-49','50-74']
+    },
+    grid: {
+      left: '3%',
+      right: '4%',
+      bottom: '3%',
+      containLabel: true
+    },
+    toolbox: {
+      feature: {
+        saveAsImage: {}
+      }
     },
     xAxis: {
-      splitLine: {
-        lineStyle: {
-          type: 'dashed'
-        }
-      }
+      type: 'category',
+      boundaryGap: false,
+      data: [1997,	1998,	1999,	2000,	2001,	2002,	2003,	2004,	2005,	2006,	2007,	2008,	2009,	2010,	2011,	2012,	2013,	2014,	2015,	2016,	2017,	2018]
     },
     yAxis: {
-      splitLine: {
-        lineStyle: {
-          type: 'dashed'
-        }
-      },
-      scale: true
+      type: 'value'
     },
-    series: [{
-      name: '1990',
-      data: data[0],
-      type: 'scatter',
-      symbolSize: function (data) {
-        return Math.sqrt(data[2]) / 5e2;
+    series: [
+      {
+        name:'15-24',
+        type:'line',
+        data:[38.6,	37.1,	32.1,	33.4,	32.6,	28.1,	30.1,	28.0,	30.1,	31.1,	33.8,	35.5,	28.0,	25.0,	30.6,	31.5,	31.8,	32.6,	35.7,	36.7,	39.7,	41.2]
       },
-      label: {
-        emphasis: {
-          show: true,
-          formatter: function (param) {
-            return param.data[3];
-          },
-          position: 'top'
-        }
+      {
+        name:'25-49',
+        type:'line',
+        data:[80.4,	79.3,	76.8,	75.0,	75.9,	76.5,	78.3,	78.1,	79.4,	84.4,	84.7,	84.3,	76.6,	74.8,	78.4,	79.7,	80.5,	80.9,	82.8,	82.1,	83.8,	83.9]
       },
-      itemStyle: {
-        normal: {
-          shadowBlur: 10,
-          shadowColor: 'rgba(120, 36, 50, 0.5)',
-          shadowOffsetY: 5,
-          color: new echarts.graphic.RadialGradient(0.4, 0.3, 1, [{
-            offset: 0,
-            color: 'rgb(251, 118, 123)'
-          }, {
-            offset: 1,
-            color: 'rgb(204, 46, 72)'
-          }])
-        }
+      {
+        name:'50-74',
+        type:'line',
+        data:[40.1,	40.4,	39.8,	38.9,	39.7,	42.2,	42.8,	44.6,	46.1,	49.9,	50.8,	51.1,	48.5,	45.8,	49.0,	51.1,	52.8,	53.6,	54.9,	56.2,	57.3,	57.9]
       }
-    }, {
-      name: '2015',
-      data: data[1],
-      type: 'scatter',
-      symbolSize: function (data) {
-        return Math.sqrt(data[2]) / 5e2;
-      },
-      label: {
-        emphasis: {
-          show: true,
-          formatter: function (param) {
-            return param.data[3];
-          },
-          position: 'top'
-        }
-      },
-      itemStyle: {
-        normal: {
-          shadowBlur: 10,
-          shadowColor: 'rgba(25, 100, 150, 0.5)',
-          shadowOffsetY: 5,
-          color: new echarts.graphic.RadialGradient(0.4, 0.3, 1, [{
-            offset: 0,
-            color: 'rgb(129, 227, 238)'
-          }, {
-            offset: 1,
-            color: 'rgb(25, 183, 207)'
-          }])
-        }
-      }
-    }]
+    ]
   };
 
   return (
     <div className="chart">
-      <ReactEcharts option={opts} style={{ height: "50vh" }}/>
+      <ReactEcharts option={opts} style={{ height: "70vh" }}/>
     </div>
   )
 };
