@@ -3,6 +3,7 @@ import ReactEcharts from "echarts-for-react";
 
 const SampleChart = () => {
 
+  const chartRef = React.useRef(null);
     let coefficient = 1.005
   const [inputValue, setInputValue] = React.useState(coefficient);
     let i = 0;
@@ -24,56 +25,67 @@ const SampleChart = () => {
 
     }
     const opts = {
-        title: {
-            text: 'TT332: 15-74-aastaste hõiveseisund elukoha, soo ja vanuserühma järgi'
-        },
-        tooltip: {
-            trigger: 'axis'
-        },
-        legend: {
-            data: ['15-24', '25-49', '50-74']
-        },
-        grid: {
-            left: '3%',
-            right: '4%',
-            bottom: '3%',
-            containLabel: true
-        },
-        toolbox: {
-            feature: {
-                saveAsImage: {}
-            }
-        },
-        xAxis: {
-            type: 'category',
-            boundaryGap: false,
-            data: years
-        },
-        yAxis: {
-            type: 'value'
-        },
-        series: [
-            {
-                name: '15-24',
-                type: 'line',
-                data: _18_24data
-            },
-            {
-                name: '25-49',
-                type: 'line',
-                data: _25_49data
-            },
-            {
-                name: '50-74',
-                type: 'line',
-                data: _50_74data
-            }
+      legend: {},
+      tooltip: {
+        trigger: 'axis',
+        showContent: false
+      },
+      dataset: {
+        source: [
+          years,
+          _18_24data,
+          _25_49data,
+          _50_74data
         ]
-    };
+      },
+      xAxis: {type: 'category'},
+      yAxis: {gridIndex: 0},
+      grid: {top: '55%'},
+      series: [
+        {type: 'line', smooth: true, seriesLayoutBy: 'row'},
+        {type: 'line', smooth: true, seriesLayoutBy: 'row'},
+        {type: 'line', smooth: true, seriesLayoutBy: 'row'},
+        {
+          type: 'pie',
+          id: 'pie',
+          radius: '30%',
+          center: ['50%', '25%'],
+          label: {
+            formatter: '{b}: {@2012} ({d}%)'
+          },
+          encode: {
+            itemName: 'product',
+            value: '2012',
+            tooltip: '2012'
+          }
+        }
+      ]
+    }
+
+  let onEvents = {
+    'updateAxisPointer': (event) => {
+      var xAxisInfo = event.axesInfo[0];
+      if (xAxisInfo) {
+        var dimension = xAxisInfo.value + 1;
+        chartRef.getEchartsInstance().setOption({
+          series: {
+            id: 'pie',
+            label: {
+              formatter: '{b}: {@[' + dimension + ']} ({d}%)'
+            },
+            encode: {
+              value: dimension,
+              tooltip: dimension
+            }
+          }
+        });
+      }
+    }
+  };
 
     return (
         <div className="chart">
-            <ReactEcharts option={opts} style={{height: "70vh"}}/>
+            <ReactEcharts ref={chartRef} option={opts} style={{height: "70vh"}} onEvents={onEvents}/>
           <label for="coef">Pane mingi nr</label>
             <input step="0.005" type="number" value={inputValue} id="coef" onChange={(evt) => setInputValue(evt.target.value)} />
         </div>
