@@ -4,6 +4,8 @@ import ReactEcharts from "echarts-for-react";
 const SampleChart = () => {
 
     const chartRef = React.useRef(null);
+    const shadowColor = 'rgba(98, 67, 134, 0.3)';
+    const blurRadius = 10;
     let coefficient = 1.005
     let coefficient2 = 1.005
     const [inputValue, setInputValue] = React.useState(coefficient);
@@ -34,7 +36,7 @@ const SampleChart = () => {
 
     }
     const opts = {
-        color: ['#dd6b66','#759aa0','#e69d87','#8dc1a9','#ea7e53','#eedd78','#73a373','#73b9bc','#7289ab', '#91ca8c','#f49f42'],
+        color: ['#F64B6D', '#624386', '#FED114','#434D88', '#B2033C',  '#FF8E32', '#78D7C1',  '#72272E', '#5EAFFF'],
         legend: {},
         tooltip: {
             trigger: 'axis',
@@ -55,17 +57,59 @@ const SampleChart = () => {
         yAxis: {gridIndex: 0},
         grid: {top: '55%'},
         series: [
-            {type: 'line', smooth: true, seriesLayoutBy: 'row'},
-            {type: 'line', smooth: true, seriesLayoutBy: 'row'},
-            {type: 'line', smooth: true, seriesLayoutBy: 'row'},
-            {type: 'bar', smooth: true, seriesLayoutBy: 'row'},
-            {type: 'bar', smooth: true, seriesLayoutBy: 'row'},
-            {type: 'bar', smooth: true, seriesLayoutBy: 'row'},
+            {
+                type: 'line', smooth: true, seriesLayoutBy: 'row', itemStyle: {
+                    normal: {
+                        shadowBlur: blurRadius,
+                        shadowColor: shadowColor
+                    }
+                },},
+            {type: 'line', smooth: true, seriesLayoutBy: 'row',                itemStyle: {
+                    normal: {
+                    shadowBlur: blurRadius,
+                    shadowColor: shadowColor
+                    }
+                },},
+            {
+                type: 'line', smooth: true, seriesLayoutBy: 'row', itemStyle: {
+                    normal: {
+                        shadowBlur: blurRadius,
+                        shadowColor: shadowColor
+                    }
+                },},
+            {
+                type: 'bar', smooth: true, seriesLayoutBy: 'row', itemStyle: {
+                    normal: {
+                        shadowBlur: blurRadius,
+                        shadowColor: shadowColor
+                    }
+                },},
+            {
+                type: 'bar', smooth: true, seriesLayoutBy: 'row', itemStyle: {
+                    normal: {
+                        shadowBlur: blurRadius,
+                        shadowColor: shadowColor
+                    }
+                },},
+            {
+                type: 'bar', smooth: true, seriesLayoutBy: 'row', itemStyle: {
+                    normal: {
+                        shadowBlur: blurRadius,
+                        shadowColor: shadowColor
+                    }
+                },},
             {
                 type: 'pie',
                 id: 'pie',
-                radius: '30%',
-                center: ['35%', '25%'],
+                radius: '35%',
+                center: ['45%', '25%'],
+                roseType: 'angle',
+                itemStyle: {
+                    normal: {
+                        shadowBlur: blurRadius,
+                        shadowColor: shadowColor
+                    }
+                },
                 label: {
                     formatter: '{b}: {@2008} ({d}%)'
                 },
@@ -79,8 +123,15 @@ const SampleChart = () => {
             {
                 type: 'pie',
                 id: 'pie2',
-                radius: '30%',
+                radius: '35%',
                 center: ['65%', '25%'],
+                roseType: 'angle',
+                itemStyle: {
+                    normal: {
+                        shadowBlur: blurRadius,
+                        shadowColor: shadowColor
+                    }
+                },
                 label: {
                     formatter: '{b}: {@2008} ({d}%)'
                 },
