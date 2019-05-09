@@ -9,9 +9,9 @@ const SampleChart = () => {
     let _25_49data = [80.4, 79.3, 76.8, 75.0, 75.9, 76.5, 78.3, 78.1, 79.4, 84.4, 84.7, 84.3, 76.6, 74.8, 78.4, 79.7, 80.5, 80.9, 82.8, 82.1, 83.8, 83.9];
     let _50_74data = [40.1, 40.4, 39.8, 38.9, 39.7, 42.2, 42.8, 44.6, 46.1, 49.9, 50.8, 51.1, 48.5, 45.8, 49.0, 51.1, 52.8, 53.6, 54.9, 56.2, 57.3, 57.9];
     while (i < 25) {
-        _18_24data.push((_18_24data[_18_24data.length - 1] * coefficient));
-        _25_49data.push((_25_49data[_25_49data.length - 1] * coefficient));
-        _50_74data.push((_50_74data[_50_74data.length - 1] * coefficient));
+        _18_24data.push((Number) (_18_24data[_18_24data.length - 1] * coefficient).toFixed(1));
+        _25_49data.push((Number) (_25_49data[_25_49data.length - 1] * coefficient).toFixed(1));
+        _50_74data.push((Number) (_50_74data[_50_74data.length - 1] * coefficient).toFixed(1));
         i++;
     }
 
