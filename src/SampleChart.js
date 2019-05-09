@@ -8,10 +8,16 @@ const SampleChart = () => {
     let _18_24data = [38.6, 37.1, 32.1, 33.4, 32.6, 28.1, 30.1, 28.0, 30.1, 31.1, 33.8, 35.5, 28.0, 25.0, 30.6, 31.5, 31.8, 32.6, 35.7, 36.7, 39.7, 41.2];
     let _25_49data = [80.4, 79.3, 76.8, 75.0, 75.9, 76.5, 78.3, 78.1, 79.4, 84.4, 84.7, 84.3, 76.6, 74.8, 78.4, 79.7, 80.5, 80.9, 82.8, 82.1, 83.8, 83.9];
     let _50_74data = [40.1, 40.4, 39.8, 38.9, 39.7, 42.2, 42.8, 44.6, 46.1, 49.9, 50.8, 51.1, 48.5, 45.8, 49.0, 51.1, 52.8, 53.6, 54.9, 56.2, 57.3, 57.9];
+
+    function calcNumber(number) {
+        let numberVal = (Number)(number[number.length - 1] * coefficient).toFixed(1);
+        return numberVal > 100 ? 100 : numberVal;
+    }
+
     while (i < 25) {
-        _18_24data.push((Number) (_18_24data[_18_24data.length - 1] * coefficient).toFixed(1));
-        _25_49data.push((Number) (_25_49data[_25_49data.length - 1] * coefficient).toFixed(1));
-        _50_74data.push((Number) (_50_74data[_50_74data.length - 1] * coefficient).toFixed(1));
+        _18_24data.push(calcNumber(_18_24data));
+        _25_49data.push(calcNumber(_25_49data));
+        _50_74data.push(calcNumber(_50_74data));
         i++;
     }
 
