@@ -95,7 +95,7 @@ const SampleChart = () => {
             '#434D88', '#B2033C',  '#FF8E32',
             '#78D7C1',  '#72272E', '#5EAFFF'],
         title: {
-            text: 'Employed immigration population',
+            text: 'Employed immigration population by economic activity IR20',
             subtext: 'Employed immigration population by economic activity IR20'
         },
         legend: {
