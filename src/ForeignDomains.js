@@ -9,24 +9,24 @@ const SampleChart = () => {
     let coefficient2 = 1.005
     const [inputValue, setInputValue] = React.useState(coefficient);
     let i = 0;
-    let data2 =    ["Põllumajandus, metsamajandus ja kalapüük", 0.9 , 1.2 , 0.8 , 0.8 , 0, 1.2 , 1.0 , 0.9 , 1.0 , 0.7 , 0.7]
-    let data4 =    ["Mäetööstus", 1.9 , 2.0 , 2.5 , 2.3 , 2.0 , 2.0 , 1.9 , 1.3 , 1.0 , 0.8 , 1.4]
-    let data6 =    ["Töötlev tööstus", 26.3 , 24.6 , 27.2 , 27.1 , 24.6 , 25.5 , 24.5 , 24.6 , 25.5 , 24.8 , 23.4]
-    let data8 =    ["Elektrienergia, gaasi, auru ja veevarustus; kanalisatsioon; jäätmekäitlus", 2.4 , 2.8 , 4.2 , 3.7 , 3.0 , 2.4 , 3.6 , 3.1 , 1.7 , 2.4 , 2.5]
-     let data10 =   ["Ehitus", 12.5 , 9.1 , 6.5 , 7.6 , 8.0 , 8.1 , 7.3 , 9.2 , 8.4 , 8.4 , 9.1]
-     let data12 =   ["Hulgi- ja jaekaubandus; mootorsõidukite ja mootorrataste remont", 11.9 , 13.0 , 11.2 , 12.0 , 11.9 , 12.5 , 13.6 , 11.7 , 12.3 , 13.1 , 10.4]
-     let data14 =   ["Veondus ja laondus", 10.1 , 11.1 , 11.3 , 11.6 , 12.2 , 11.7 , 11.6 , 11.7 , 11.2 , 12.4 , 12.0]
-     let data16 =   ["Majutus ja toitlustus", 3.8 , 3.1 , 2.7 , 3.0 , 2.7 , 3.2 , 3.6 , 3.8 , 3.8 , 3.5 , 4.4]
-     let data18 =   ["Info ja side", 1.7 , 1.9 , 1.3 , 1.5 , 1.7 , 1.8 , 2.1 , 0, 2.9 , 3.0 , 3.8]
-     let data20 =   ["Finants- ja kindlustustegevus", 0.9 , 1.0 , 0, 1.6 , 1.3 , 1.0 , 0, 1.4 , 1.7 , 0, 1.2]
-     let data22 =   ["Kinnisvaraalane tegevus", 2.5 , 2.8 , 3.4 , 3.6 , 3.6 , 3.2 , 2.2 , 3.2 , 2.8 , 2.6 , 2.6]
-     let data24 =   ["Kutse-, teadus- ja tehnikaalane tegevus", 1.6 , 2.0 , 2.0 , 1.5 , 1.7 , 2.1 , 3.0 , 3.1 , 2.0 , 2.3 , 2.3]
-     let data26 =   ["Haldus- ja abitegevused", 4.0 , 4.2 , 3.9 , 3.7 , 4.6 , 5.5 , 4.7 , 4.4 , 4.3 , 4.4 , 5.1]
-     let data28 =   ["Avalik haldus ja riigikaitse; kohustuslik sotsiaalkindlustus", 3.0 , 3.1 , 2.5 , 2.7 , 2.4 , 1.9 , 2.7 , 1.5 , 1.5 , 1.6 , 2.1]
-     let data30 =   ["Haridus", 7.9 , 9.1 , 8.5 , 7.9 , 9.6 , 7.8 , 7.1 , 6.3 , 6.9 , 7.4 , 7.3]
-     let data32 =   ["Tervishoid ja sotsiaalhoolekanne", 4.1 , 5.5 , 6.6 , 6.1 , 6.9 , 6.5 , 6.5 , 8.1 , 8.4 , 7.0 , 6.9]
-     let data34 =   ["Kunst, meelelahutus ja vaba aeg", 1.8 , 1.7 , 1.8 , 1.6 , 1.3 , 1.8 , 1.5 , 1.2 , 1.8 , 1.5 , 1.9]
-     let data36 =   ["Muud tegevusalad", 2.6 , 1.9 , 2.4 , 1.8 , 1.5 , 1.9 , 2.2 , 2.9 , 2.8 , 3.1 , 2.8]
+    let data2 =    ["Agriculture, forestry and fishing", 0.9 , 1.2 , 0.8 , 0.8 , 0, 1.2 , 1.0 , 0.9 , 1.0 , 0.7 , 0.7]
+    let data4 =    ["Mining and quarrying", 1.9 , 2.0 , 2.5 , 2.3 , 2.0 , 2.0 , 1.9 , 1.3 , 1.0 , 0.8 , 1.4]
+    let data6 =    ["Manufacturing", 26.3 , 24.6 , 27.2 , 27.1 , 24.6 , 25.5 , 24.5 , 24.6 , 25.5 , 24.8 , 23.4]
+    let data8 =    ["Electricity, gas, steam, water supply; sewerage, waste management", 2.4 , 2.8 , 4.2 , 3.7 , 3.0 , 2.4 , 3.6 , 3.1 , 1.7 , 2.4 , 2.5]
+     let data10 =   ["Construction", 12.5 , 9.1 , 6.5 , 7.6 , 8.0 , 8.1 , 7.3 , 9.2 , 8.4 , 8.4 , 9.1]
+     let data12 =   ["Wholesale and retail trade; repair of motor vehicles and motorcycles", 11.9 , 13.0 , 11.2 , 12.0 , 11.9 , 12.5 , 13.6 , 11.7 , 12.3 , 13.1 , 10.4]
+     let data14 =   ["Transportation and storage", 10.1 , 11.1 , 11.3 , 11.6 , 12.2 , 11.7 , 11.6 , 11.7 , 11.2 , 12.4 , 12.0]
+     let data16 =   ["Accommodation and food service activities", 3.8 , 3.1 , 2.7 , 3.0 , 2.7 , 3.2 , 3.6 , 3.8 , 3.8 , 3.5 , 4.4]
+     let data18 =   ["Information and communication", 1.7 , 1.9 , 1.3 , 1.5 , 1.7 , 1.8 , 2.1 , 0, 2.9 , 3.0 , 3.8]
+     let data20 =   ["Financial and insurance activities", 0.9 , 1.0 , 0, 1.6 , 1.3 , 1.0 , 0, 1.4 , 1.7 , 0, 1.2]
+     let data22 =   ["Real estate activities", 2.5 , 2.8 , 3.4 , 3.6 , 3.6 , 3.2 , 2.2 , 3.2 , 2.8 , 2.6 , 2.6]
+     let data24 =   ["Professional, scientific and technical activities", 1.6 , 2.0 , 2.0 , 1.5 , 1.7 , 2.1 , 3.0 , 3.1 , 2.0 , 2.3 , 2.3]
+     let data26 =   ["Administrative and support service activities", 4.0 , 4.2 , 3.9 , 3.7 , 4.6 , 5.5 , 4.7 , 4.4 , 4.3 , 4.4 , 5.1]
+     let data28 =   ["Public administration and defence, compulsory social security", 3.0 , 3.1 , 2.5 , 2.7 , 2.4 , 1.9 , 2.7 , 1.5 , 1.5 , 1.6 , 2.1]
+     let data30 =   ["Education", 7.9 , 9.1 , 8.5 , 7.9 , 9.6 , 7.8 , 7.1 , 6.3 , 6.9 , 7.4 , 7.3]
+     let data32 =   ["Human health and social work activities", 4.1 , 5.5 , 6.6 , 6.1 , 6.9 , 6.5 , 6.5 , 8.1 , 8.4 , 7.0 , 6.9]
+     let data34 =   ["Arts, entertainment and recreation", 1.8 , 1.7 , 1.8 , 1.6 , 1.3 , 1.8 , 1.5 , 1.2 , 1.8 , 1.5 , 1.9]
+     let data36 =   ["Other economic activity", 2.6 , 1.9 , 2.4 , 1.8 , 1.5 , 1.9 , 2.2 , 2.9 , 2.8 , 3.1 , 2.8]
     let years = ['product', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018']
 
     function calcNumber(number, inputValue) {
@@ -160,7 +160,6 @@ const SampleChart = () => {
     return (
         <div className="chart">
             <ReactEcharts ref={chartRef} option={opts} style={{height: "70vh"}} onEvents={onEvents}/>
-            <label for="coef">Tegevusvaldkonna osakaalu trend</label>
         </div>
     )
 };
