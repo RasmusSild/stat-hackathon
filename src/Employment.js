@@ -80,7 +80,7 @@ const Employment = () => {
             '#72272E', '#5EAFFF', '#434D88'
         ],
         title: {
-            text: 'Employment rate of native and immigrant population by age group IR03',
+            text: 'How many of us are employed?',
             subtext: 'Employment rate of native and immigrant population by age group IR03'
         },
         legend: {
