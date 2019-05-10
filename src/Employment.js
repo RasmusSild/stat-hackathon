@@ -61,12 +61,7 @@ const Employment = () => {
         }
         const minbound = 0.98;
         const maxbound = 1.02;
-        let item = calcNumber(_18_24data, getRandomArbitrary(est * minbound, est * maxbound));
-        console.log(est * minbound);
-        console.log(est * maxbound);
-        console.log(est);
-        console.log(item);
-        _18_24data.push(item);
+        _18_24data.push(calcNumber(_18_24data, getRandomArbitrary(est * minbound, est * maxbound)));
         _25_49data.push(calcNumber(_25_49data, getRandomArbitrary(est * minbound, est * maxbound)));
         _50_74data.push(calcNumber(_50_74data, getRandomArbitrary(est * minbound, est * maxbound)));
         _18_24data2.push(calcNumber(_18_24data2, getRandomArbitrary(imm * minbound, imm * maxbound)));
