@@ -10,7 +10,7 @@ $background: #F3F9FF;
 @import "../../_variables.sass";
 @import "../../../node_modules/bulma/bulma.sass";
 
-body {
+html {
   background: $background;
 }
 .columns.is-fullheight {
