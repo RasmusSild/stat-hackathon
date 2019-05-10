@@ -9,7 +9,9 @@ $detail-height: 60vh;
 @import "~react-bulma-components/src/index.sass";
 @import "../../_variables.sass";
 
-
+.body {
+  background-color: black;
+}
 .columns.is-fullheight {
   min-height:calc(100vh - ( #{$navbar-height} + 2rem - .75rem)  );
   max-height: calc(100vh - ( #{$navbar-height} + 2rem - .75rem)  );
