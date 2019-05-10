@@ -27,7 +27,7 @@ const Employment = () => {
         return Math.random() * (max - min) + min;
     }
 
-    while (i < (tillYear - lastYear)) {
+    while (i < 0) {
         years.push(((Number)(years[years.length - 1]) + 1).toFixed(0))
         let est = 1;
         let imm = 1;
@@ -61,7 +61,8 @@ const Employment = () => {
         }
         const minbound = 0.98;
         const maxbound = 1.02;
-        _18_24data.push(calcNumber(_18_24data, getRandomArbitrary(est * minbound, est * maxbound)));
+        let item = calcNumber(_18_24data, getRandomArbitrary(est * minbound, est * maxbound));
+        _18_24data.push(item);
         _25_49data.push(calcNumber(_25_49data, getRandomArbitrary(est * minbound, est * maxbound)));
         _50_74data.push(calcNumber(_50_74data, getRandomArbitrary(est * minbound, est * maxbound)));
         _18_24data2.push(calcNumber(_18_24data2, getRandomArbitrary(imm * minbound, imm * maxbound)));
@@ -81,16 +82,9 @@ const Employment = () => {
             text: 'Employment rate of native and immigrant population by age group IR03',
             subtext: 'Employment rate of native and immigrant population by age group IR03'
         },
-        legend: {
-            bottom: 0,
-            height: 'auto',
-            padding: [
-                0, 0, 20, 0
-            ]
-        },
         tooltip: {
             trigger: 'axis',
-            showContent: true,
+            showContent: false,
         },
         dataset: {
             source: [
@@ -161,22 +155,8 @@ const Employment = () => {
     let onEvents = {};
 
     return (
-        <div className="chart">
-            <ReactEcharts ref={chartRef} option={opts} style={{height: "80vh"}} onEvents={onEvents}/>
-            <div className="field">
-                <div className="control">
-                    <label className="label">Number of new immigrant workers</label>
-                    <input className="input" step="1000" type="number" value={newImmigrants} id="coef"
-                           onChange={(evt) => setInputValue(evt.target.value)}/>
-                </div>
-            </div>
-            <div className="field">
-                <div className="control">
-                    <label className="label">Years</label>
-                    <input className="input" step="1" type="number" value={tillYear} id="coef2"
-                           onChange={(evt) => setYear(evt.target.value)}/>
-                </div>
-            </div>
+        <div className="chart" style={{height: "100%"}}>
+            <ReactEcharts ref={chartRef} option={opts} onEvents={onEvents} style={{height: "100%"}}/>
         </div>
     )
 };

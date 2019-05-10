@@ -1,10 +1,10 @@
 import React from 'react';
 import Employment from './../Employment';
+import EmploymentThumbnail from './../EmploymentThumbnail';
 import NationalDomains from './../NationalDomains';
 import NationalDomainsThumbnail from './../NationalDomainsThumbnail';
 import ForeignDomains from './../ForeignDomains';
 import ForeignDomainsThumbnail from './../ForeignDomainsThumbnail';
-import SampleChart2 from './../SampleChart2';
 
 import Container from 'react-bulma-components/lib/components/container';
 import Columns from 'react-bulma-components/lib/components/columns';
@@ -22,6 +22,11 @@ const FutureTeller = () => {
           <Heading size={3} renderAs="h2" >Foo</Heading>
         </Columns.Column>
         <Columns.Column size={3}>
+          <Card onClick={() => setActiveChart('employment')}>
+            <Card.Content>
+              <EmploymentThumbnail />
+            </Card.Content>
+          </Card>
           <Card onClick={() => setActiveChart('fDomains')}>
             <Card.Content>
               <ForeignDomainsThumbnail />
