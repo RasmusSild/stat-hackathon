@@ -36,21 +36,28 @@ html {
 
 .header {
   position: relative;
+.select {
+  margin-top: -15px;
+  display: inline-block !important;
+  max-width: 280px;
+  select {
+    background-color: transparent !important;
+    border-color: transparent !important;
+    display: inline-block !important;
+    color: $blue !important;
+    width: auto;
+    max-width: 300px;
+  }
+}
   .is-9 {
-    .image {
-      position: absolute;
-      right: -8rem;
-      width: 40%;
-      margin-top: 2rem;
-    }
   .title {
     position: absolute;
-    margin-top: 8rem;
+    margin-top: 7rem;
   }
   }
   .is-3 {
     .image img {
-        height: 220px;
+        height: 200px;
     }
   }
 }
@@ -63,6 +70,9 @@ html {
   .is-3 {
     padding: .75rem;
     margin-bottom: 1.5rem;
+    .card:hover {
+      background: $white-ter;
+    }
   }
   .is-9 {
     .card {
@@ -110,4 +120,11 @@ html {
 
 .card-content {
   height: 100%;
+}
+
+
+
+
+.select:not(.is-multiple):not(.is-loading)::after {
+  top: 100%;
 }
