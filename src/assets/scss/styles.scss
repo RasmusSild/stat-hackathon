@@ -16,6 +16,12 @@ html {
 .hero {
   height: 50vh;
 }
+.image {
+  display: inline-block;
+  width: 40%;
+  text-align: center;
+  margin-top: 200px;
+}
 .columns.is-fullheight {
   min-height:calc(100vh - ( #{$navbar-height} + 2rem - .75rem)  );
   max-height: calc(100vh - ( #{$navbar-height} + 2rem - .75rem)  );

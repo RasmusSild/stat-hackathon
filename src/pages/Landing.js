@@ -9,7 +9,7 @@ const Landing = () => (
   <Hero>
     <Hero.Body>
         <Container className="has-text-centered">
-          <Image src="../assets/images/desk.svg" size="3by2" />
+          <Image src="/images/desk.svg"  />
       </Container>
     </Hero.Body>
   </Hero>
