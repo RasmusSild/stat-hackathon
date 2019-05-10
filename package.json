@@ -1,6 +1,7 @@
 {
   "name": "stat-hackathon",
   "version": "0.1.0",
+  "main": "sass/styles.scss",
   "private": true,
   "dependencies": {
     "bulma": "^0.7.4",
