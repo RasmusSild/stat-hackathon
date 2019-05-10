@@ -13,6 +13,9 @@ $background: #F3F9FF;
 html {
   background: $background;
 }
+.hero {
+  height: 50vh;
+}
 .columns.is-fullheight {
   min-height:calc(100vh - ( #{$navbar-height} + 2rem - .75rem)  );
   max-height: calc(100vh - ( #{$navbar-height} + 2rem - .75rem)  );

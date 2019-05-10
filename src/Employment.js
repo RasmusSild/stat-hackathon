@@ -21,9 +21,13 @@ const Employment = () => {
     let _25_49data2 = ['Välismaalaste tööhõivemäär: 25-49', 54.8, 54.5, 51.7, 48.5, 46.7, 48.5, 48.9, 47.7, 46.9, 47.3, 47.4];
     let _50_74data2 = ['Välismaalaste tööhõivemäär: 50-74', 39.5, 41.1, 45.8, 48.2, 49.8, 48.2, 48.7, 50.4, 49.5, 49.9, 50.8];
 
-    function calcNumber(number, inputValue) {
-        let numberVal = (Number)(number[number.length - 1] * inputValue).toFixed(1);
+    function calcNumber(number, coefficient) {
+        let numberVal = (Number)(number[number.length - 1] * coefficient * getRandomArbitrary(0.95, 1.05)).toFixed(1);
         return numberVal > 100 ? 100 : numberVal;
+    }
+
+    function getRandomArbitrary(min, max) {
+        return Math.random() * (max - min) + min;
     }
 
     while (i < (tillYear- lastYear)) {
@@ -35,7 +39,6 @@ const Employment = () => {
         _25_49data2.push(calcNumber(_25_49data2, inputValue2));
         _50_74data2.push(calcNumber(_50_74data2, inputValue2));
         i++;
-
     }
     const opts = {
         color: ['#F64B6D', '#624386', '#FED114','#434D88', '#B2033C',  '#FF8E32', '#78D7C1',  '#72272E', '#5EAFFF'],
