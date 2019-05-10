@@ -119,7 +119,13 @@ const SampleChart = () => {
                 radius: ['20%','30%'],
                 center: ['50%', '25%'],
                 label: {
-                    formatter: '{b}: {@2008} ({d}%)'
+                    formatter: '{b}: {@2008} ({d}%)',
+                    color: '#000'
+                },
+                labelLine: {
+                    lineStyle: {
+                        color: '#000'
+                    }
                 },
                 encode: {
                     itemName: 'product',
