@@ -21,7 +21,7 @@ const FutureTeller = () => {
     <Container>
         <Columns className="header">
           <Columns.Column size={3}>
-            <Image src="/images/logo.svg" />
+            <Image src="./images/logo.svg" />
         </Columns.Column>
         <Columns.Column size={9}>
           <Heading size={3} renderAs="h2" >see how your todays decisions will influence our tomorrow in             <Select>
@@ -32,7 +32,7 @@ const FutureTeller = () => {
               <option>Economy-wide Material Flow Accounts</option>
               <option>Youth Conditions in Estonia</option>
             </Select></Heading>
-          <Image src="/images/people.svg" />
+          <Image src="./images/people.svg" />
         </Columns.Column>
         </Columns>
 
