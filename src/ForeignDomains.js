@@ -95,7 +95,7 @@ const SampleChart = () => {
             '#434D88', '#B2033C',  '#FF8E32',
             '#78D7C1',  '#72272E', '#5EAFFF'],
         title: {
-            text: 'Employed immigration population',
+            text: 'Where do immigrants work?',
             subtext: 'Employed immigration population by economic activity IR20',
             textStyle: {
                 fontWeight: 400,
@@ -103,13 +103,15 @@ const SampleChart = () => {
             }
         },
         legend: {
-            orient: 'vertical',
-            x: 'left',
-            data: years
+            bottom: 0,
+            height: 'auto',
+            padding: [
+                0, 0, 20, 0
+            ]
         },
         tooltip: {
             trigger: 'axis',
-            showContent: false,
+            showContent: true,
         },
         dataset: {
             source: [
@@ -137,7 +139,7 @@ const SampleChart = () => {
         avoidLabelOverlap: true,
         xAxis: {type: 'category'},
         yAxis: {gridIndex: 0},
-        grid: {top: '55%'},
+        grid: {top: '45%', bottom: "20%"},
         series: [
             {type: 'line', smooth: true, seriesLayoutBy: 'row', },
             {type: 'line', smooth: true, seriesLayoutBy: 'row', },
@@ -201,7 +203,7 @@ const SampleChart = () => {
 
     return (
         <div className="chart">
-            <ReactEcharts ref={chartRef} option={opts} style={{height: "70vh"}} onEvents={onEvents}/>
+            <ReactEcharts ref={chartRef} option={opts} onEvents={onEvents}/>
             <div className="field">
                 <div className="control">
                     <label className="label">Number of new immigrant workers</label>

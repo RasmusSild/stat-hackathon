@@ -3,7 +3,7 @@ import Container from 'react-bulma-components/lib/components/container';
 import Heading from 'react-bulma-components/lib/components/heading';
 import Hero from 'react-bulma-components/lib/components/hero';
 import Image from 'react-bulma-components/lib/components/image';
-import { Select, Control } from 'react-bulma-components/lib/components/form';
+import { Select } from 'react-bulma-components/lib/components/form';
 
 const Landing = ({onChange}) => {
 
@@ -17,7 +17,7 @@ const Landing = ({onChange}) => {
     <Hero>
       <Hero.Body>
           <Container className="has-text-centered">
-            <Image src="/images/desk.svg"  />
+            <Image src="./images/desk.svg"  />
         </Container>
       </Hero.Body>
     </Hero>
@@ -32,6 +32,12 @@ const Landing = ({onChange}) => {
                 <option value="">Choose</option>
                 <option value="futureteller">Labour Market</option>
                 <option value="population">Population</option>
+                <option>Labour Market</option>
+              <option>Population</option>
+              <option>Salaries in Estonia</option>
+              <option>Estonian Enterprises and Enterprise Demography</option>
+              <option>Economy-wide Material Flow Accounts</option>
+              <option>Youth Conditions in Estonia</option>
               </Select>
           </Heading>
         </Container>

@@ -78,10 +78,6 @@ const Employment = () => {
             '#F64B6D', '#FF8E32', '#FED114',
             '#72272E', '#5EAFFF', '#434D88'
         ],
-        title: {
-            text: 'Employment rate of native and immigrant population by age group IR03',
-            subtext: 'Employment rate of native and immigrant population by age group IR03'
-        },
         tooltip: {
             trigger: 'axis',
             showContent: false,
@@ -97,8 +93,14 @@ const Employment = () => {
                 _50_74data2,
             ]
         },
-        xAxis: {type: 'category'},
-        yAxis: {gridIndex: 0},
+        xAxis: {
+            type: 'category',
+            show: false,
+        },
+        yAxis: {
+            gridIndex: 0,
+            show: false,
+        },
         series: [
             {
                 type: 'line', smooth: true, seriesLayoutBy: 'row', itemStyle: {
@@ -155,7 +157,7 @@ const Employment = () => {
     let onEvents = {};
 
     return (
-        <div className="chart" style={{height: "100%"}}>
+        <div className="chart thumbnail">
             <ReactEcharts ref={chartRef} option={opts} onEvents={onEvents} style={{height: "100%"}}/>
         </div>
     )

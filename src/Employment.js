@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactEcharts from "echarts-for-react";
+import { Input, Field, Label, Control } from 'react-bulma-components/lib/components/form';
+import { Icon } from 'react-bulma-components/lib/components/icon';
+
 
 const Employment = () => {
 
@@ -78,7 +81,7 @@ const Employment = () => {
             '#72272E', '#5EAFFF', '#434D88'
         ],
         title: {
-            text: 'Employment rate of native and immigrant population by age group IR03',
+            text: 'How many of us are employed?',
             subtext: 'Employment rate of native and immigrant population by age group IR03',
             textStyle: {
                 fontWeight: 400,
@@ -166,7 +169,7 @@ const Employment = () => {
 
     return (
         <div className="chart">
-            <ReactEcharts ref={chartRef} option={opts} style={{height: "80vh"}} onEvents={onEvents}/>
+            <ReactEcharts ref={chartRef} option={opts} onEvents={onEvents}/>
             <div className="field">
                 <div className="control">
                     <label className="label">Number of new immigrant workers</label>
@@ -177,7 +180,7 @@ const Employment = () => {
             <div className="field">
                 <div className="control">
                     <label className="label">Years</label>
-                    <input className="input" step="1" type="number" value={tillYear} id="coef2"
+                    <Input className="input" step="1" type="number" value={tillYear} id="coef2"
                            onChange={(evt) => setYear(evt.target.value)}/>
                 </div>
             </div>

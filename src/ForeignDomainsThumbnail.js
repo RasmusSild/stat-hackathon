@@ -57,10 +57,7 @@ const SampleChart = () => {
     }
     const opts = {
         color: ['#F64B6D', '#624386', '#FED114','#434D88', '#B2033C',  '#FF8E32', '#78D7C1',  '#72272E', '#5EAFFF'],
-        title: {
-            text: 'Employed native population',
-            subtext: 'Employed native population by economic activity IR20'
-        },
+
         legend: {
             orient: 'vertical',
             x: 'left',
@@ -94,8 +91,14 @@ const SampleChart = () => {
             ]
         },
         avoidLabelOverlap: true,
-        xAxis: {type: 'category'},
-        yAxis: {gridIndex: 0},
+        xAxis: {
+            type: 'category',
+            show: false,
+        },
+        yAxis: {
+            gridIndex: 0,
+            show: false,
+        },
         series: [
             {type: 'line', smooth: true, seriesLayoutBy: 'row', },
             {type: 'line', smooth: true, seriesLayoutBy: 'row', },
@@ -121,7 +124,7 @@ const SampleChart = () => {
     };
 
     return (
-        <div className="chart" style={{height: "100%"}}>
+        <div className="chart thumbnail">
             <ReactEcharts ref={chartRef} option={opts} style={{height: "100%"}} onEvents={onEvents}/>
         </div>
     )
