@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactEcharts from "echarts-for-react";
+import { Input, Field, Label, Control } from 'react-bulma-components/lib/components/form';
+import { Icon } from 'react-bulma-components/lib/components/icon';
+
 
 const Employment = () => {
 
@@ -173,7 +176,7 @@ const Employment = () => {
             <div className="field">
                 <div className="control">
                     <label className="label">Years</label>
-                    <input className="input" step="1" type="number" value={tillYear} id="coef2"
+                    <Input className="input" step="1" type="number" value={tillYear} id="coef2"
                            onChange={(evt) => setYear(evt.target.value)}/>
                 </div>
             </div>

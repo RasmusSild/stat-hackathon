@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactEcharts from "echarts-for-react";
+import Columns from 'react-bulma-components/lib/components/columns';
 
 const SampleChart = () => {
 
@@ -199,6 +200,10 @@ const SampleChart = () => {
     return (
         <div className="chart">
             <ReactEcharts ref={chartRef} option={opts} style={{height: "100vh"}} onEvents={onEvents}/>
+            <Columns>
+            <Columns.Column>
+            </Columns.Column>
+            </Columns>
             <div className="field">
                 <div className="control">
                     <label className="label">Number of new immigrant workers</label>
