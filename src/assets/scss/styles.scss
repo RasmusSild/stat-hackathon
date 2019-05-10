@@ -48,6 +48,11 @@ html {
     margin-top: 8rem;
   }
   }
+  .is-3 {
+    .image img {
+        height: 220px;
+    }
+  }
 }
 
 .dashboard {
@@ -71,7 +76,9 @@ html {
       height: 250px;
       min-height: 250px;
       margin-top: -40px;
-      margin-bottom: -20px;
+      margin-bottom: -35px;
+      margin-right: -40px;
+      margin-left: -40px;
     }
   }
 }
