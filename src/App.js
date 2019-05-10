@@ -1,15 +1,15 @@
 import React from 'react';
-import './App.css';
 import SampleChart from './SampleChart';
 import SampleChart2Nat from './SampleChart2Nat';
 import SampleChart2Imm from './SampleChart2Imm';
 import SampleChart2 from './SampleChart2';
 import SampleChart3 from './SampleChart3';
-import {Columns, Card} from "react-bulma-components/full";
+import {Container, Columns, Card} from "react-bulma-components/full";
 
 const App = () => (
-    <div className="app">
+    <Container>
         <Columns>
+        <h1>Foo</h1>
             <Columns.Column size={3}>
                 <Card>
                     <Card.Content>
@@ -35,7 +35,7 @@ const App = () => (
                 <SampleChart2/>
             </Columns.Column>
         </Columns>
-    </div>
+        </Container>
 );
 
 export default App;

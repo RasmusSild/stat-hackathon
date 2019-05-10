@@ -1,0 +1,25 @@
+@charset "utf-8";
+$family-primary: "Muli", "Roboto", "Helvetica", "Arial", sans-serif;
+$hr-height: 1px;
+$hr-margin: .5rem 0;
+$hr-background-color: #dbdbdb;
+$body-size: 14px;
+$detail-height: 60vh;
+
+@import "~react-bulma-components/src/index.sass";
+@import "../../_variables.sass";
+
+
+.columns.is-fullheight {
+  min-height:calc(100vh - ( #{$navbar-height} + 2rem - .75rem)  );
+  max-height: calc(100vh - ( #{$navbar-height} + 2rem - .75rem)  );
+  height: calc(100vh - ( #{$navbar-height} + 2rem - .75rem)  );
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  align-content: stretch;
+  .column {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}
