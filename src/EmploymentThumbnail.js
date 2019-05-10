@@ -104,7 +104,7 @@ const Employment = () => {
                         shadowBlur: blurRadius,
                         shadowColor: shadowColor
                     }
-                },
+                }, symbol: 'none'
             },
             {
                 type: 'line', smooth: true, seriesLayoutBy: 'row', itemStyle: {
@@ -112,7 +112,7 @@ const Employment = () => {
                         shadowBlur: blurRadius,
                         shadowColor: shadowColor
                     }
-                },
+                }, symbol: 'none'
             },
             {
                 type: 'line', smooth: true, seriesLayoutBy: 'row', itemStyle: {
@@ -120,7 +120,7 @@ const Employment = () => {
                         shadowBlur: blurRadius,
                         shadowColor: shadowColor
                     }
-                },
+                }, symbol: 'none'
             },
             {
                 type: 'bar', smooth: true, seriesLayoutBy: 'row', itemStyle: {
