@@ -124,7 +124,7 @@ const SampleChart = () => {
     };
 
     return (
-        <div className="chart thumbnail">
+        <div className="thumbnail">
             <ReactEcharts ref={chartRef} option={opts} style={{height: "100%"}} onEvents={onEvents}/>
         </div>
     )

@@ -70,17 +70,23 @@ html {
     }
   }
   .chart {
-    min-height: 800px;
+    .echarts-for-react {
+    min-height: 700px;
     height: 100%;
-    &.thumbnail {
+    }
+      }
+    .thumbnail {
+      .echarts-for-react {
       height: 250px;
       min-height: 250px;
+    }
+
       margin-top: -40px;
       margin-bottom: -35px;
       margin-right: -40px;
       margin-left: -40px;
     }
-  }
+
 }
 
 .columns.is-fullheight {

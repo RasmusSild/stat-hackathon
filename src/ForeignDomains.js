@@ -100,6 +100,7 @@ const SampleChart = () => {
             subtext: 'Employed immigration population by economic activity IR20',
             textStyle: {
                 fontWeight: 400,
+                fontSize: 32,
                 fontFamily: "Muli, Roboto, Helvetica, Arial, sans-serif"
             }
         },

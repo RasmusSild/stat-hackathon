@@ -100,6 +100,7 @@ const SampleChart = () => {
             subtext: 'Employed native population by economic activity IR20',
             textStyle: {
                 fontWeight: 400,
+                fontSize: 32,
                 fontFamily: "Muli, Roboto, Helvetica, Arial, sans-serif"
             }
         },
@@ -107,7 +108,7 @@ const SampleChart = () => {
             bottom: 0,
             height: 'auto',
             padding: [
-                0, 0, 20, 0
+                40, 0, 20, 0
             ]
         },
         tooltip: {

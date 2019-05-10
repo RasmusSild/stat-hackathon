@@ -73,7 +73,7 @@ const Employment = () => {
     }
     const opts = {
         grid: {
-            bottom: "20%"
+            bottom: "20",
         },
         color: [
             '#F64B6D', '#FF8E32', '#FED114',
@@ -83,15 +83,17 @@ const Employment = () => {
             text: 'How many of us are employed?',
             subtext: 'Employment rate of native and immigrant population by age group IR03',
             textStyle: {
+                fontSize: 32,
                 fontWeight: 400,
-                fontFamily: "Muli, Roboto, Helvetica, Arial, sans-serif"
+                fontFamily: "Muli, Roboto, Helvetica, Arial, sans-serif",
+                paddingBottom: 20
             }
         },
         legend: {
             bottom: 0,
             height: 'auto',
             padding: [
-                0, 0, 20, 0
+                40, 0, 20, 0
             ]
         },
         tooltip: {
