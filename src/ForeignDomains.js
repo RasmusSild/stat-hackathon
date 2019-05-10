@@ -97,7 +97,6 @@ const SampleChart = () => {
             '#78D7C1',  '#72272E', '#5EAFFF'],
         title: {
             text: 'Where do immigrants work?',
-            subtext: 'Employed immigration population by economic activity IR20',
             textStyle: {
                 fontWeight: 400,
                 fontSize: 32,
@@ -109,11 +108,14 @@ const SampleChart = () => {
             height: 'auto',
             padding: [
                 0, 0, 20, 0
-            ]
+            ],
+            textStyle: {
+                color: '#778F9B'
+            }
         },
         tooltip: {
             trigger: 'axis',
-            showContent: true,
+            showContent: false,
         },
         dataset: {
             source: [
@@ -139,8 +141,42 @@ const SampleChart = () => {
             ]
         },
         avoidLabelOverlap: true,
-        xAxis: {type: 'category'},
-        yAxis: {gridIndex: 0},
+        xAxis: {
+            type: 'category',
+            axisLine: {
+                lineStyle: {
+                    color: '#778F9B'
+                }
+            },
+            axisTick: {
+                lineStyle: {
+                    color: '#778F9B'
+                }
+            },
+            axisLabel: {
+                color: '#778F9B'
+            },
+            nameTextStyle: {
+                color: '#778F9B'
+
+            }
+        },
+        yAxis: {
+            gridIndex: 0,
+            axisLine: {
+                lineStyle: {
+                    color: '778F9B'
+                }
+            },
+            axisTick: {
+                lineStyle: {
+                    color: '778F9B'
+                }
+            },
+            axisLabel: {
+                color: '778F9B'
+            }
+        },
         grid: {top: '45%', bottom: "20%"},
         series: [
             {type: 'line', smooth: true, seriesLayoutBy: 'row', },
@@ -166,11 +202,11 @@ const SampleChart = () => {
                 center: ['50%', '25%'],
                 label: {
                     formatter: '{b}: {@2008} ({d}%)',
-                    color: '#000'
+                    color: '#778F9B'
                 },
                 labelLine: {
                     lineStyle: {
-                        color: '#000'
+                        color: '#778F9B'
                     }
                 },
                 encode: {
