@@ -97,7 +97,11 @@ const SampleChart = () => {
         color: ['#F64B6D', '#624386', '#FED114', '#434D88', '#B2033C', '#FF8E32', '#78D7C1', '#72272E', '#5EAFFF'],
         title: {
             text: 'In which areas do we work?',
-            subtext: 'Employed native population by economic activity IR20'
+            subtext: 'Employed native population by economic activity IR20',
+            textStyle: {
+                fontWeight: 400,
+                fontFamily: "Muli, Roboto, Helvetica, Arial, sans-serif"
+            }
         },
         legend: {
             bottom: 0,
