@@ -3,7 +3,7 @@ import Container from 'react-bulma-components/lib/components/container';
 import Heading from 'react-bulma-components/lib/components/heading';
 import Hero from 'react-bulma-components/lib/components/hero';
 import Image from 'react-bulma-components/lib/components/image';
-import { Select, Control } from 'react-bulma-components/lib/components/form';
+import { Select } from 'react-bulma-components/lib/components/form';
 
 const Landing = () => (
   <>
@@ -24,6 +24,10 @@ const Landing = () => (
             <Select>
               <option>Labour Market</option>
               <option>Population</option>
+              <option>Salaries in Estonia</option>
+              <option>Estonian Enterprises and Enterprise Demography</option>
+              <option>Economy-wide Material Flow Accounts</option>
+              <option>Youth Conditions in Estonia</option>
             </Select>
         </Heading>
       </Container>

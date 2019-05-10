@@ -34,6 +34,22 @@ html {
   }
 }
 
+.header {
+  position: relative;
+  .is-9 {
+    .image {
+      position: absolute;
+      right: -8rem;
+      width: 60%;
+    }
+  .title {
+    position: absolute;
+    margin-top: 8rem;
+  }
+  }
+
+}
+
 .columns.is-fullheight {
   min-height:calc(100vh - ( #{$navbar-height} + 2rem - .75rem)  );
   max-height: calc(100vh - ( #{$navbar-height} + 2rem - .75rem)  );
