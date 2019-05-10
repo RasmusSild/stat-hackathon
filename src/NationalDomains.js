@@ -109,7 +109,10 @@ const SampleChart = () => {
             height: 'auto',
             padding: [
                 40, 0, 20, 0
-            ]
+            ],
+            textStyle: {
+                color: '#778F9B'
+            }
         },
         tooltip: {
             trigger: 'axis',
@@ -138,8 +141,42 @@ const SampleChart = () => {
                 data35,
             ]
         },
-        xAxis: {type: 'category'},
-        yAxis: {gridIndex: 0},
+        xAxis: {
+            type: 'category',
+            axisLine: {
+                lineStyle: {
+                    color: '778F9B'
+                }
+            },
+            axisTick: {
+                lineStyle: {
+                    color: '778F9B'
+                }
+            },
+            axisLabel: {
+                color: '778F9B'
+            },
+            nameTextStyle: {
+                color: '778F9B'
+
+            }
+        },
+        yAxis: {
+            gridIndex: 0,
+            axisLine: {
+                lineStyle: {
+                    color: '778F9B'
+                }
+            },
+            axisTick: {
+                lineStyle: {
+                    color: '778F9B'
+                }
+            },
+            axisLabel: {
+                color: '778F9B'
+            }
+        },
         grid: {top: '45%', bottom: "20%"},
         series: [
             {type: 'line', smooth: true, seriesLayoutBy: 'row',},

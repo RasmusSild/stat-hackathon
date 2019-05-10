@@ -85,8 +85,8 @@ const Employment = () => {
                 fontSize: 32,
                 fontWeight: 400,
                 fontFamily: "Muli, Roboto, Helvetica, Arial, sans-serif",
-                paddingBottom: 20
-            }
+                paddingBottom: 20,
+            },
         },
         legend: {
             bottom: 0,
@@ -94,7 +94,10 @@ const Employment = () => {
             color: '#ddd',
             padding: [
                 20, 0, 30, 0
-            ]
+            ],
+            textStyle: {
+                color: '#778F9B'
+            }
         },
         tooltip: {
             trigger: 'axis',
@@ -111,8 +114,42 @@ const Employment = () => {
                 _50_74data2,
             ]
         },
-        xAxis: {type: 'category'},
-        yAxis: {gridIndex: 0},
+        xAxis: {
+            type: 'category',
+            axisLine: {
+                lineStyle: {
+                    color: '778F9B'
+                }
+            },
+            axisTick: {
+                lineStyle: {
+                    color: '778F9B'
+                }
+            },
+            axisLabel: {
+                color: '778F9B'
+            },
+            nameTextStyle: {
+                color: '778F9B'
+
+            }
+        },
+        yAxis: {
+            gridIndex: 0,
+            axisLine: {
+                lineStyle: {
+                    color: '778F9B'
+                }
+            },
+            axisTick: {
+                lineStyle: {
+                    color: '778F9B'
+                }
+            },
+            axisLabel: {
+                color: '778F9B'
+            }
+        },
         series: [
             {
                 type: 'line', smooth: true, seriesLayoutBy: 'row', itemStyle: {
