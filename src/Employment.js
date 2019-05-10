@@ -41,15 +41,20 @@ const Employment = () => {
         i++;
     }
     const opts = {
+        grid: {
+            bottom: "20%"
+        },
         color: ['#F64B6D', '#624386', '#FED114','#434D88', '#B2033C',  '#FF8E32', '#78D7C1',  '#72272E', '#5EAFFF'],
         title: {
             text: 'Employment rate',
             subtext: 'Employment rate of native and immigrant population by age group'
         },
         legend: {
-            padding: 5,
             bottom: 0,
-            height: 'auto'
+            height: 'auto',
+            padding: [
+                0, 0, 20, 0
+            ]
         },
         tooltip: {
             trigger: 'axis',
@@ -120,7 +125,7 @@ const Employment = () => {
 
     return (
         <div className="chart">
-            <ReactEcharts ref={chartRef} option={opts} style={{height: "70vh"}} onEvents={onEvents}/>
+            <ReactEcharts ref={chartRef} option={opts} style={{height: "80vh"}} onEvents={onEvents}/>
             <div className="field">
               <div className="control">
                 <label className="label">todo Eestlaste tööhõivemäära trend</label>
