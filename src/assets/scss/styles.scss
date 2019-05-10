@@ -1,10 +1,12 @@
 @charset "utf-8";
+$blue: #5EAFFF;
 $family-primary: "Muli", "Roboto", "Helvetica", "Arial", sans-serif;
 $hr-height: 1px;
 $hr-margin: .5rem 0;
 $hr-background-color: #dbdbdb;
 $body-size: 14px;
 $background: #F3F9FF;
+$link: $blue;
 
 @import "~react-bulma-components/src/index.sass";
 @import "../../_variables.sass";
@@ -14,14 +16,24 @@ html {
   background: $background;
 }
 .hero {
-  height: 50vh;
+  &:not(.is-dark) {
+    height: 400px;
+  }
+  height: 100vh;
+  .image {
+    display: inline-block;
+    width: 40%;
+    text-align: center;
+    margin-top: 150px;
+  }
+  .title {
+    margin-top: 250px;
+  }
+  .select {
+    margin-top: 2rem;
+  }
 }
-.image {
-  display: inline-block;
-  width: 40%;
-  text-align: center;
-  margin-top: 200px;
-}
+
 .columns.is-fullheight {
   min-height:calc(100vh - ( #{$navbar-height} + 2rem - .75rem)  );
   max-height: calc(100vh - ( #{$navbar-height} + 2rem - .75rem)  );
