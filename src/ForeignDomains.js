@@ -3,11 +3,10 @@ import ReactEcharts from "echarts-for-react";
 
 const SampleChart = () => {
 
-
     const chartRef = React.useRef(null);
-    let coefficient = 1.005
-    let coefficient2 = 1.005
-    const [inputValue, setInputValue] = React.useState(coefficient);
+    let lastYear = 2018;
+    const [newImmigrants, setInputValue] = React.useState(0);
+    const [tillYear, setYear] = React.useState(lastYear);
     let i = 0;
     let data2 =    ["Agriculture, forestry and fishing", 0.9 , 1.2 , 0.8 , 0.8 , 0, 1.2 , 1.0 , 0.9 , 1.0 , 0.7 , 0.7]
     let data4 =    ["Mining and quarrying", 1.9 , 2.0 , 2.5 , 2.3 , 2.0 , 2.0 , 1.9 , 1.3 , 1.0 , 0.8 , 1.4]
@@ -16,6 +15,7 @@ const SampleChart = () => {
      let data10 =   ["Construction", 12.5 , 9.1 , 6.5 , 7.6 , 8.0 , 8.1 , 7.3 , 9.2 , 8.4 , 8.4 , 9.1]
      let data12 =   ["Wholesale and retail trade; repair of motor vehicles and motorcycles", 11.9 , 13.0 , 11.2 , 12.0 , 11.9 , 12.5 , 13.6 , 11.7 , 12.3 , 13.1 , 10.4]
      let data14 =   ["Transportation and storage", 10.1 , 11.1 , 11.3 , 11.6 , 12.2 , 11.7 , 11.6 , 11.7 , 11.2 , 12.4 , 12.0]
+     let data36 =   ["Other economic activity", 2.6 , 1.9 , 2.4 , 1.8 , 1.5 , 1.9 , 2.2 , 2.9 , 2.8 , 3.1 , 2.8]
      let data16 =   ["Accommodation and food service activities", 3.8 , 3.1 , 2.7 , 3.0 , 2.7 , 3.2 , 3.6 , 3.8 , 3.8 , 3.5 , 4.4]
      let data18 =   ["Information and communication", 1.7 , 1.9 , 1.3 , 1.5 , 1.7 , 1.8 , 2.1 , 0, 2.9 , 3.0 , 3.8]
      let data20 =   ["Financial and insurance activities", 0.9 , 1.0 , 0, 1.6 , 1.3 , 1.0 , 0, 1.4 , 1.7 , 0, 1.2]
@@ -26,37 +26,74 @@ const SampleChart = () => {
      let data30 =   ["Education", 7.9 , 9.1 , 8.5 , 7.9 , 9.6 , 7.8 , 7.1 , 6.3 , 6.9 , 7.4 , 7.3]
      let data32 =   ["Human health and social work activities", 4.1 , 5.5 , 6.6 , 6.1 , 6.9 , 6.5 , 6.5 , 8.1 , 8.4 , 7.0 , 6.9]
      let data34 =   ["Arts, entertainment and recreation", 1.8 , 1.7 , 1.8 , 1.6 , 1.3 , 1.8 , 1.5 , 1.2 , 1.8 , 1.5 , 1.9]
-     let data36 =   ["Other economic activity", 2.6 , 1.9 , 2.4 , 1.8 , 1.5 , 1.9 , 2.2 , 2.9 , 2.8 , 3.1 , 2.8]
     let years = ['product', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018']
 
     function calcNumber(number, inputValue) {
         return (Number)(number[number.length - 1] * inputValue).toFixed(1);
     }
 
-    while (i < 0) {
+    function getRandomArbitrary(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+
+    while (i < (tillYear - lastYear)) {
         years.push(((Number)(years[years.length - 1]) + 1).toFixed(0))
-        data2.push(calcNumber(data2, inputValue));
-        data4.push(calcNumber(data4, inputValue));
-        data6.push(calcNumber(data6, inputValue));
-        data8.push(calcNumber(data8, inputValue));
-        data10.push(calcNumber(data10, inputValue));
-        data12.push(calcNumber(data12, inputValue));
-        data14.push(calcNumber(data14, inputValue));
-        data16.push(calcNumber(data16, inputValue));
-        data18.push(calcNumber(data18, inputValue));
-        data20.push(calcNumber(data20, inputValue));
-        data22.push(calcNumber(data22, inputValue));
-        data24.push(calcNumber(data24, inputValue));
-        data26.push(calcNumber(data26, inputValue));
-        data28.push(calcNumber(data28, inputValue));
-        data30.push(calcNumber(data30, inputValue));
-        data32.push(calcNumber(data32, inputValue));
-        data34.push(calcNumber(data34, inputValue));
-        data36.push(calcNumber(data36, inputValue));
+        let est = 1;
+        let imm = 1;
+        let up10k = 1.01;
+        let up30k = 1.03;
+        let up100k = 1.04;
+        let down10k = 0.99;
+        let down30k = 0.97;
+        let down100k = 0.96;
+        if (newImmigrants >= 40000) {
+            est = down100k
+            imm = up100k
+        } else if (newImmigrants >= 25000) {
+            est = down30k
+            imm = up30k
+        } else if (newImmigrants >= 5000) {
+            est = down10k
+            imm = up10k
+        } else if (newImmigrants >= 0) {
+            est = 1
+            imm = 1
+        } else if (newImmigrants >= -5000) {
+            est = up10k
+            imm = down10k
+        } else if (newImmigrants >= -25000) {
+            est = up30k
+            imm = down30k
+        } else {
+            est = up100k
+            imm = down100k
+        }
+        const minbound = 0.98;
+        const maxbound = 1.02;
+        data2.push(calcNumber(data2, getRandomArbitrary(est * minbound, est * maxbound)));
+        data4.push(calcNumber(data4, getRandomArbitrary(est * minbound, est * maxbound)));
+        data6.push(calcNumber(data6, getRandomArbitrary(est * minbound, est * maxbound)));
+        data8.push(calcNumber(data8, getRandomArbitrary(est * minbound, est * maxbound)));
+        data10.push(calcNumber(data10, getRandomArbitrary(est * minbound, est * maxbound)));
+        data12.push(calcNumber(data12, getRandomArbitrary(est * minbound, est * maxbound)));
+        data14.push(calcNumber(data14, getRandomArbitrary(est * minbound, est * maxbound)));
+        data16.push(calcNumber(data16, getRandomArbitrary(est * minbound, est * maxbound)));
+        data36.push(calcNumber(data36, getRandomArbitrary(est * minbound, est * maxbound)));
+        data18.push(calcNumber(data18, getRandomArbitrary(imm * minbound, imm * maxbound)));
+        data20.push(calcNumber(data20, getRandomArbitrary(imm * minbound, imm * maxbound)));
+        data22.push(calcNumber(data22, getRandomArbitrary(imm * minbound, imm * maxbound)));
+        data24.push(calcNumber(data24, getRandomArbitrary(imm * minbound, imm * maxbound)));
+        data26.push(calcNumber(data26, getRandomArbitrary(imm * minbound, imm * maxbound)));
+        data28.push(calcNumber(data28, getRandomArbitrary(imm * minbound, imm * maxbound)));
+        data30.push(calcNumber(data30, getRandomArbitrary(imm * minbound, imm * maxbound)));
+        data32.push(calcNumber(data32, getRandomArbitrary(imm * minbound, imm * maxbound)));
+        data34.push(calcNumber(data34, getRandomArbitrary(imm * minbound, imm * maxbound)));
         i++;
     }
     const opts = {
-        color: ['#F64B6D', '#624386', '#FED114','#434D88', '#B2033C',  '#FF8E32', '#78D7C1',  '#72272E', '#5EAFFF'],
+        color: ['#F64B6D', '#624386', '#FED114',
+            '#434D88', '#B2033C',  '#FF8E32',
+            '#78D7C1',  '#72272E', '#5EAFFF'],
         title: {
             text: 'Employed immigration population',
             subtext: 'Employed immigration population by economic activity IR20'
@@ -161,6 +198,20 @@ const SampleChart = () => {
     return (
         <div className="chart">
             <ReactEcharts ref={chartRef} option={opts} style={{height: "70vh"}} onEvents={onEvents}/>
+            <div className="field">
+                <div className="control">
+                    <label className="label">Number of new immigrant workers</label>
+                    <input className="input" step="1000" type="number" value={newImmigrants} id="coef"
+                           onChange={(evt) => setInputValue(evt.target.value)}/>
+                </div>
+            </div>
+            <div className="field">
+                <div className="control">
+                    <label className="label">Years</label>
+                    <input className="input" step="1" type="number" value={tillYear} id="coef2"
+                           onChange={(evt) => setYear(evt.target.value)}/>
+                </div>
+            </div>
         </div>
     )
 };
