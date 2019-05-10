@@ -78,10 +78,6 @@ const Employment = () => {
             '#F64B6D', '#FF8E32', '#FED114',
             '#72272E', '#5EAFFF', '#434D88'
         ],
-        tooltip: {
-            trigger: 'axis',
-            showContent: false,
-        },
         dataset: {
             source: [
                 years,

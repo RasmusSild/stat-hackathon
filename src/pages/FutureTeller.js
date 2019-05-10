@@ -25,7 +25,7 @@ const FutureTeller = () => {
             <Image src="./images/logo.svg" />
         </Columns.Column>
         <Columns.Column size={9}>
-          <Heading size={3} renderAs="h2" >see how your todays decisions will influence our tomorrow in
+          <Heading size={3} renderAs="h2" >How your decisions will influence tomorrow's
            <Select>
               <option>Labour Market</option>
               <option>Population</option>
