@@ -79,7 +79,11 @@ const Employment = () => {
         ],
         title: {
             text: 'Employment rate of native and immigrant population by age group IR03',
-            subtext: 'Employment rate of native and immigrant population by age group IR03'
+            subtext: 'Employment rate of native and immigrant population by age group IR03',
+            textStyle: {
+                fontWeight: 400,
+                fontFamily: "Muli, Roboto, Helvetica, Arial, sans-serif"
+            }
         },
         legend: {
             bottom: 0,

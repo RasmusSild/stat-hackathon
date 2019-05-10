@@ -5,31 +5,40 @@ import Hero from 'react-bulma-components/lib/components/hero';
 import Image from 'react-bulma-components/lib/components/image';
 import { Select, Control } from 'react-bulma-components/lib/components/form';
 
-const Landing = () => (
-  <>
-  <Hero>
-    <Hero.Body>
-        <Container className="has-text-centered">
-          <Image src="/images/desk.svg"  />
-      </Container>
-    </Hero.Body>
-  </Hero>
-  <Hero color="dark">
-    <Hero.Body>
-        <Container className="has-text-centered">
-          <Heading size={2}>
-          What interest you most about the future?
-        </Heading>
-          <Heading subtitle size={3} renderAs="h2">
-            <Select>
-              <option>Labour Market</option>
-              <option>Population</option>
-            </Select>
-        </Heading>
-      </Container>
-    </Hero.Body>
-  </Hero>
-  </>
-)
+const Landing = ({onChange}) => {
+
+  const onSelectChange = evt => {
+    if (evt.target.value !== 'futureteller') return;
+    onChange(evt.target.value)
+  };
+
+  return (
+    <>
+    <Hero>
+      <Hero.Body>
+          <Container className="has-text-centered">
+            <Image src="/images/desk.svg"  />
+        </Container>
+      </Hero.Body>
+    </Hero>
+    <Hero color="dark">
+      <Hero.Body>
+          <Container className="has-text-centered">
+            <Heading size={2}>
+            What interests you most about the future?
+          </Heading>
+            <Heading subtitle size={3} renderAs="h2">
+              <Select onChange={onSelectChange} name="pageSelect" value={null}>
+                <option value="">Choose</option>
+                <option value="futureteller">Labour Market</option>
+                <option value="population">Population</option>
+              </Select>
+          </Heading>
+        </Container>
+      </Hero.Body>
+    </Hero>
+    </>
+  )
+}
 
 export default Landing;

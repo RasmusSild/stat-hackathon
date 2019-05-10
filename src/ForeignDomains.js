@@ -96,7 +96,11 @@ const SampleChart = () => {
             '#78D7C1',  '#72272E', '#5EAFFF'],
         title: {
             text: 'Employed immigration population',
-            subtext: 'Employed immigration population by economic activity IR20'
+            subtext: 'Employed immigration population by economic activity IR20',
+            textStyle: {
+                fontWeight: 400,
+                fontFamily: "Muli, Roboto, Helvetica, Arial, sans-serif"
+            }
         },
         legend: {
             orient: 'vertical',

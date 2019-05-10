@@ -3,11 +3,17 @@ import FutureTeller from './pages/FutureTeller';
 import Landing from './pages/Landing';
 
 const App = () => {
-    const [activePage, setActivePage] = React.useState('futureteller');
+    const [activePage, setActivePage] = React.useState('landing');
+
+    const onPageChange = (page) => {
+        console.log(page);
+        setActivePage(page)
+    }
+
     return(
         <div>
-            {activePage==='landing' && <Landing onChange={setActivePage} />}
-            {activePage === 'futureteller' && <FutureTeller onChange={setActivePage} />}
+            {activePage==='landing' && <Landing onChange={(page) => onPageChange(page)} />}
+            {activePage === 'futureteller' && <FutureTeller onChange={(page) => onPageChange(page)}/>}
         </div>
     )
 };
