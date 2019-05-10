@@ -56,7 +56,7 @@ const FutureTeller = () => {
             <Card.Content>
               <NationalDomainsThumbnail />
               <Content>
-                <Heading size={4}>In which areas do we work?</Heading>
+                <Heading size={4}>In which areas do we work in?</Heading>
                 <Heading subtitle size={6}>
                   Employed native population by econimic activity
             </Heading>
