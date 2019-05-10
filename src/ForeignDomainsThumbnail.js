@@ -58,8 +58,8 @@ const SampleChart = () => {
     const opts = {
         color: ['#F64B6D', '#624386', '#FED114','#434D88', '#B2033C',  '#FF8E32', '#78D7C1',  '#72272E', '#5EAFFF'],
         title: {
-            text: 'Võõrtööliste osakaal valdkonniti',
-            subtext: 'Labour status of population aged 15-74 by place of residence, sex and age group'
+            text: 'Employed native population',
+            subtext: 'Employed native population by economic activity IR20'
         },
         legend: {
             orient: 'vertical',
