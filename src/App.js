@@ -14,7 +14,7 @@ import Heading from 'react-bulma-components/lib/components/heading';
 
 const App = () => (
     <Container>
-        <Columns>
+        <Columns className="is-fullheight">
             <Columns.Column size={12}>
                 <Heading size={3} renderAs="h2" >Foo</Heading>
             </Columns.Column>

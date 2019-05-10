@@ -4,14 +4,14 @@ $hr-height: 1px;
 $hr-margin: .5rem 0;
 $hr-background-color: #dbdbdb;
 $body-size: 14px;
-$detail-height: 60vh;
+$background: #F3F9FF;
 
 @import "~react-bulma-components/src/index.sass";
 @import "../../_variables.sass";
 @import "../../../node_modules/bulma/bulma.sass";
 
-.body {
-  background-color: $bg;
+body {
+  background: $background;
 }
 .columns.is-fullheight {
   min-height:calc(100vh - ( #{$navbar-height} + 2rem - .75rem)  );
