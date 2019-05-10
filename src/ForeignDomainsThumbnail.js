@@ -63,10 +63,6 @@ const SampleChart = () => {
             x: 'left',
             data: years
         },
-        tooltip: {
-            trigger: 'axis',
-            showContent: false,
-        },
         dataset: {
             source: [
                 years,

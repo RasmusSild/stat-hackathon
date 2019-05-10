@@ -25,7 +25,7 @@ const FutureTeller = () => {
             <Image src="./images/logo.svg" />
         </Columns.Column>
         <Columns.Column size={9}>
-          <Heading size={3} renderAs="h2" >see how your todays decisions will influence our tomorrow in
+          <Heading size={3} renderAs="h2" >How your decisions will influence tomorrow's
            <Select>
               <option>Labour Market</option>
               <option>Population</option>
@@ -56,7 +56,7 @@ const FutureTeller = () => {
             <Card.Content>
               <NationalDomainsThumbnail />
               <Content>
-                <Heading size={4}>In which areas do we work?</Heading>
+                <Heading size={4}>In which areas do we work in?</Heading>
                 <Heading subtitle size={6}>
                   Employed native population by econimic activity
             </Heading>
