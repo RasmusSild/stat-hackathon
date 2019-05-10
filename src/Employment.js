@@ -6,11 +6,8 @@ const Employment = () => {
     const chartRef = React.useRef(null);
     const shadowColor = 'rgba(98, 67, 134, 0.3)';
     const blurRadius = 10;
-    let coefficient = 1.005;
-    let coefficient2 = 1.005;
     let lastYear = 2018;
-    const [inputValue, setInputValue] = React.useState(coefficient);
-    const [inputValue2, setInputValue2] = React.useState(coefficient2);
+    const [newImmigrants, setInputValue] = React.useState(0);
     const [tillYear, setYear] = React.useState(lastYear);
     let i = 0;
     let years = ['product', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018'];
@@ -30,20 +27,60 @@ const Employment = () => {
         return Math.random() * (max - min) + min;
     }
 
-    while (i < (tillYear- lastYear)) {
+    while (i < (tillYear - lastYear)) {
         years.push(((Number)(years[years.length - 1]) + 1).toFixed(0))
-        _18_24data.push(calcNumber(_18_24data, inputValue));
-        _25_49data.push(calcNumber(_25_49data, inputValue));
-        _50_74data.push(calcNumber(_50_74data, inputValue));
-        _18_24data2.push(calcNumber(_18_24data2, inputValue2));
-        _25_49data2.push(calcNumber(_25_49data2, inputValue2));
-        _50_74data2.push(calcNumber(_50_74data2, inputValue2));
+        let est = 1;
+        let imm = 1;
+        let up10k = 1.01;
+        let up30k = 1.03;
+        let up100k = 1.04;
+        let down10k = 0.99;
+        let down30k = 0.97;
+        let down100k = 0.96;
+        if (newImmigrants >= 40000) {
+            est = down100k
+            imm = up100k
+        } else if (newImmigrants >= 25000) {
+            est = down30k
+            imm = up30k
+        } else if (newImmigrants >= 5000) {
+            est = down10k
+            imm = up10k
+        } else if (newImmigrants >= 0) {
+            est = 1
+            imm = 1
+        } else if (newImmigrants >= -5000) {
+            est = up10k
+            imm = down10k
+        } else if (newImmigrants >= -25000) {
+            est = up30k
+            imm = down30k
+        } else {
+            est = up100k
+            imm = down100k
+        }
+        const minbound = 0.98;
+        const maxbound = 1.02;
+        let item = calcNumber(_18_24data, getRandomArbitrary(est * minbound, est * maxbound));
+        console.log(est * minbound);
+        console.log(est * maxbound);
+        console.log(est);
+        console.log(item);
+        _18_24data.push(item);
+        _25_49data.push(calcNumber(_25_49data, getRandomArbitrary(est * minbound, est * maxbound)));
+        _50_74data.push(calcNumber(_50_74data, getRandomArbitrary(est * minbound, est * maxbound)));
+        _18_24data2.push(calcNumber(_18_24data2, getRandomArbitrary(imm * minbound, imm * maxbound)));
+        _25_49data2.push(calcNumber(_25_49data2, getRandomArbitrary(imm * minbound, imm * maxbound)));
+        _50_74data2.push(calcNumber(_50_74data2, getRandomArbitrary(imm * minbound, imm * maxbound)));
         i++;
     }
     const opts = {
-        color: ['#F64B6D', '#624386', '#FED114','#434D88', '#B2033C',  '#FF8E32', '#78D7C1',  '#72272E', '#5EAFFF'],
+        color: [
+            '#F64B6D', '#FF8E32', '#FED114',
+            '#72272E', '#5EAFFF', '#434D88'
+        ],
         title: {
-            text: 'Employment rate',
+            text: 'Employment rate of native and immigrant population by age group IR03',
             subtext: 'Employment rate of native and immigrant population by age group IR03'
         },
         legend: {
@@ -75,70 +112,68 @@ const Employment = () => {
                         shadowBlur: blurRadius,
                         shadowColor: shadowColor
                     }
-                },},
-            {type: 'line', smooth: true, seriesLayoutBy: 'row',                itemStyle: {
-                    normal: {
-                    shadowBlur: blurRadius,
-                    shadowColor: shadowColor
-                    }
-                },},
+                },
+            },
             {
                 type: 'line', smooth: true, seriesLayoutBy: 'row', itemStyle: {
                     normal: {
                         shadowBlur: blurRadius,
                         shadowColor: shadowColor
                     }
-                },},
+                },
+            },
+            {
+                type: 'line', smooth: true, seriesLayoutBy: 'row', itemStyle: {
+                    normal: {
+                        shadowBlur: blurRadius,
+                        shadowColor: shadowColor
+                    }
+                },
+            },
             {
                 type: 'bar', smooth: true, seriesLayoutBy: 'row', itemStyle: {
                     normal: {
                         shadowBlur: blurRadius,
                         shadowColor: shadowColor
                     }
-                },},
+                },
+            },
             {
                 type: 'bar', smooth: true, seriesLayoutBy: 'row', itemStyle: {
                     normal: {
                         shadowBlur: blurRadius,
                         shadowColor: shadowColor
                     }
-                },},
+                },
+            },
             {
                 type: 'bar', smooth: true, seriesLayoutBy: 'row', itemStyle: {
                     normal: {
                         shadowBlur: blurRadius,
                         shadowColor: shadowColor
                     }
-                },},
+                },
+            },
 
         ]
     }
 
-    let onEvents = {
-
-    };
+    let onEvents = {};
 
     return (
         <div className="chart">
             <ReactEcharts ref={chartRef} option={opts} style={{height: "70vh"}} onEvents={onEvents}/>
             <div className="field">
-              <div className="control">
-                <label className="label">todo Eestlaste tööhõivemäära trend</label>
-                <input className="input" step="0.005"  type="number" value={inputValue} id="coef"
-                       onChange={(evt) => setInputValue(evt.target.value)}/>
-              </div>
-            </div>
-            <div className="field">
-              <div className="control">
-                <label className="label">todo  Välistööjõu tööhõivemäära trend</label>
-                <input className="input" step="0.005" type="number" value={inputValue2} id="coef2"
-                       onChange={(evt) => setInputValue2(evt.target.value)}/>
-              </div>
+                <div className="control">
+                    <label className="label">Number of new immigrant workers</label>
+                    <input className="input" step="1000" type="number" value={newImmigrants} id="coef"
+                           onChange={(evt) => setInputValue(evt.target.value)}/>
+                </div>
             </div>
             <div className="field">
                 <div className="control">
                     <label className="label">Years</label>
-                    <input className="input" step="1" type="number" max={2028} value={tillYear} id="coef2"
+                    <input className="input" step="1" type="number" value={tillYear} id="coef2"
                            onChange={(evt) => setYear(evt.target.value)}/>
                 </div>
             </div>
