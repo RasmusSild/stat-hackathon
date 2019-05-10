@@ -36,7 +36,7 @@ const FutureTeller = () => {
         </Columns.Column>
         </Columns>
 
-      <Columns className="is-fullheight">
+      <Columns className="is-fullheight dashboard">
         <Columns.Column size={3}>
           <Card onClick={() => setActiveChart('employment')}>
             <Card.Content>

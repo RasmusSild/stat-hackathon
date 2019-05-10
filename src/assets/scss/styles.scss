@@ -50,6 +50,14 @@ html {
 
 }
 
+.dashboard {
+  .is-9 {
+    .card {
+      height: 100%;
+    }
+  }
+}
+
 .columns.is-fullheight {
   min-height:calc(100vh - ( #{$navbar-height} + 2rem - .75rem)  );
   max-height: calc(100vh - ( #{$navbar-height} + 2rem - .75rem)  );
