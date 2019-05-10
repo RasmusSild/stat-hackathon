@@ -57,7 +57,7 @@ const SampleChart = () => {
 
     }
     const opts = {
-        color: ['#dd6b66', '#759aa0', '#e69d87', '#8dc1a9', '#ea7e53', '#eedd78', '#73a373', '#73b9bc', '#7289ab', '#91ca8c', '#f49f42'],
+        color: ['#F64B6D', '#624386', '#FED114','#434D88', '#B2033C',  '#FF8E32', '#78D7C1',  '#72272E', '#5EAFFF'],
         legend: {},
         tooltip: {
             trigger: 'axis',
