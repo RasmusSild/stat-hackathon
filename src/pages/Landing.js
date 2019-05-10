@@ -32,8 +32,6 @@ const Landing = ({onChange}) => {
                 <option value="">Choose</option>
                 <option value="futureteller">Labour Market</option>
                 <option value="population">Population</option>
-                <option>Labour Market</option>
-              <option>Population</option>
               <option>Salaries in Estonia</option>
               <option>Estonian Enterprises and Enterprise Demography</option>
               <option>Economy-wide Material Flow Accounts</option>
