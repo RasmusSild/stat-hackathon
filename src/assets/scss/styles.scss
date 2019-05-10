@@ -40,7 +40,8 @@ html {
     .image {
       position: absolute;
       right: -8rem;
-      width: 60%;
+      width: 40%;
+      margin-top: 2rem;
     }
   .title {
     position: absolute;
@@ -51,9 +52,26 @@ html {
 }
 
 .dashboard {
+  .title,
+  .subtitle {
+    font-weight: 400;
+  }
+  .is-3 {
+    padding: .75rem;
+    margin-bottom: 1.5rem;
+  }
   .is-9 {
     .card {
       height: 100%;
+    }
+  }
+  .chart {
+    min-height: 800px;
+    height: 100%;
+    &.thumbnail {
+      height: 250px;
+      min-height: 250px;
+      margin-top: -40px;
     }
   }
 }

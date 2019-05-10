@@ -162,7 +162,7 @@ const Employment = () => {
 
     return (
         <div className="chart">
-            <ReactEcharts ref={chartRef} option={opts} style={{height: "80vh"}} onEvents={onEvents}/>
+            <ReactEcharts ref={chartRef} option={opts} onEvents={onEvents}/>
             <div className="field">
                 <div className="control">
                     <label className="label">Number of new immigrant workers</label>

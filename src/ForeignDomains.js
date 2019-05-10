@@ -95,7 +95,7 @@ const SampleChart = () => {
             '#434D88', '#B2033C',  '#FF8E32',
             '#78D7C1',  '#72272E', '#5EAFFF'],
         title: {
-            text: 'Employed immigration population by economic activity IR20',
+            text: 'Where do immigrants work?',
             subtext: 'Employed immigration population by economic activity IR20'
         },
         legend: {
@@ -199,7 +199,7 @@ const SampleChart = () => {
 
     return (
         <div className="chart">
-            <ReactEcharts ref={chartRef} option={opts} style={{height: "100vh"}} onEvents={onEvents}/>
+            <ReactEcharts ref={chartRef} option={opts} onEvents={onEvents}/>
             <div className="field">
                 <div className="control">
                     <label className="label">Number of new immigrant workers</label>
