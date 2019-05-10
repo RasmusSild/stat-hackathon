@@ -1,7 +1,7 @@
 import React from 'react';
-import SampleChart from './SampleChart';
-import SampleChart2Nat from './NationalDomains';
-import SampleChart2Imm from './ForeignDomains';
+import Employment from './Employment';
+import NationalDomains from './NationalDomains';
+import ForeignDomains from './ForeignDomains';
 import SampleChart2 from './SampleChart2';
 import SampleChart3 from './SampleChart3';
 import {Container, Columns, Card} from "react-bulma-components/full";
@@ -23,13 +23,13 @@ const App = () => (
                 </Card>
             </Columns.Column>
             <Columns.Column size={9}>
-                <SampleChart/>
+                <Employment/>
             </Columns.Column>
             <Columns.Column size={6}>
-                <SampleChart2Nat/>
+                <NationalDomains/>
             </Columns.Column>
             <Columns.Column size={6}>
-                <SampleChart2Imm/>
+                <ForeignDomains/>
             </Columns.Column>
             <Columns.Column size={12}>
                 <SampleChart2/>
