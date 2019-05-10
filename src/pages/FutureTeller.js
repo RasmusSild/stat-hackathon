@@ -76,9 +76,11 @@ const FutureTeller = () => {
         </Columns.Column>
         <Columns.Column size={9}>
         <Card>
+          <Card.Content>
           {activeChart === 'employment' && <Employment />}
           {activeChart === 'nDomains' && <NationalDomains />}
           {activeChart === 'fDomains' && <ForeignDomains />}
+            </Card.Content>
           </Card>
         </Columns.Column>
         {/*

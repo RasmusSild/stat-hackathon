@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactEcharts from "echarts-for-react";
+import Columns from 'react-bulma-components/lib/components/columns';
 
 const SampleChart = () => {
 
@@ -204,20 +205,28 @@ const SampleChart = () => {
     return (
         <div className="chart">
             <ReactEcharts ref={chartRef} option={opts} onEvents={onEvents}/>
-            <div className="field">
-                <div className="control">
-                    <label className="label">Number of new immigrant workers</label>
-                    <input className="input" step="1000" type="number" value={newImmigrants} id="coef"
-                           onChange={(evt) => setInputValue(evt.target.value)}/>
-                </div>
-            </div>
-            <div className="field">
-                <div className="control">
-                    <label className="label">Years</label>
-                    <input className="input" step="1" type="number" value={tillYear} id="coef2"
-                           onChange={(evt) => setYear(evt.target.value)}/>
-                </div>
-            </div>
+            <Columns>
+                <Columns.Column size={6}>
+                    <div className="field">
+                        <div className="control">
+                            <label className="label">Number of new immigrant workers</label>
+                            <input className="input" step="1000" type="number" value={newImmigrants} id="coef"
+                                onChange={(evt) => setInputValue(evt.target.value)} />
+                        </div>
+                    </div>
+                </Columns.Column>
+                <Columns.Column size={6}>
+                    <div className="field">
+                        <div className="control">
+                            <label className="label">Years</label>
+                            <input className="input" step="1" type="number" value={tillYear} id="coef2"
+                                onChange={(evt) => setYear(evt.target.value)} />
+                        </div>
+                    </div>
+                </Columns.Column>
+            </Columns>
+
+
         </div>
     )
 };
