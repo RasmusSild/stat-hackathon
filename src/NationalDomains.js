@@ -97,7 +97,6 @@ const SampleChart = () => {
         color: ['#F64B6D', '#624386', '#FED114', '#434D88', '#B2033C', '#FF8E32', '#78D7C1', '#72272E', '#5EAFFF'],
         title: {
             text: 'In which areas do we work in?',
-            subtext: 'Employed native population by economic activity IR20',
             textStyle: {
                 fontWeight: 400,
                 fontSize: 32,
@@ -116,7 +115,7 @@ const SampleChart = () => {
         },
         tooltip: {
             trigger: 'axis',
-            showContent: true,
+            showContent: false,
         },
         dataset: {
             source: [
@@ -145,19 +144,19 @@ const SampleChart = () => {
             type: 'category',
             axisLine: {
                 lineStyle: {
-                    color: '778F9B'
+                    color: '#778F9B'
                 }
             },
             axisTick: {
                 lineStyle: {
-                    color: '778F9B'
+                    color: '#778F9B'
                 }
             },
             axisLabel: {
-                color: '778F9B'
+                color: '#778F9B'
             },
             nameTextStyle: {
-                color: '778F9B'
+                color: '#778F9B'
 
             }
         },
@@ -165,16 +164,16 @@ const SampleChart = () => {
             gridIndex: 0,
             axisLine: {
                 lineStyle: {
-                    color: '778F9B'
+                    color: '#778F9B'
                 }
             },
             axisTick: {
                 lineStyle: {
-                    color: '778F9B'
+                    color: '#778F9B'
                 }
             },
             axisLabel: {
-                color: '778F9B'
+                color: '#778F9B'
             }
         },
         grid: {top: '45%', bottom: "20%"},
@@ -202,11 +201,11 @@ const SampleChart = () => {
                 center: ['50%', '25%'],
                 label: {
                     formatter: '{b}: {@2008} ({d}%)',
-                    color: '#000'
+                    color: '#778F9B'
                 },
                 labelLine: {
                     lineStyle: {
-                        color: '#000'
+                        color: '#778F9B'
                     }
                 },
                 encode: {

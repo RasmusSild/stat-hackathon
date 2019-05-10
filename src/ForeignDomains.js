@@ -97,7 +97,6 @@ const SampleChart = () => {
             '#78D7C1',  '#72272E', '#5EAFFF'],
         title: {
             text: 'Where do immigrants work?',
-            subtext: 'Employed immigration population by economic activity IR20',
             textStyle: {
                 fontWeight: 400,
                 fontSize: 32,
@@ -116,7 +115,7 @@ const SampleChart = () => {
         },
         tooltip: {
             trigger: 'axis',
-            showContent: true,
+            showContent: false,
         },
         dataset: {
             source: [
@@ -146,19 +145,19 @@ const SampleChart = () => {
             type: 'category',
             axisLine: {
                 lineStyle: {
-                    color: '778F9B'
+                    color: '#778F9B'
                 }
             },
             axisTick: {
                 lineStyle: {
-                    color: '778F9B'
+                    color: '#778F9B'
                 }
             },
             axisLabel: {
-                color: '778F9B'
+                color: '#778F9B'
             },
             nameTextStyle: {
-                color: '778F9B'
+                color: '#778F9B'
 
             }
         },
@@ -203,11 +202,11 @@ const SampleChart = () => {
                 center: ['50%', '25%'],
                 label: {
                     formatter: '{b}: {@2008} ({d}%)',
-                    color: '#000'
+                    color: '#778F9B'
                 },
                 labelLine: {
                     lineStyle: {
-                        color: '#000'
+                        color: '#778F9B'
                     }
                 },
                 encode: {

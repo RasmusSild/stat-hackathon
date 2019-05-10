@@ -118,19 +118,19 @@ const Employment = () => {
             type: 'category',
             axisLine: {
                 lineStyle: {
-                    color: '778F9B'
+                    color: '#778F9B'
                 }
             },
             axisTick: {
                 lineStyle: {
-                    color: '778F9B'
+                    color: '#778F9B'
                 }
             },
             axisLabel: {
-                color: '778F9B'
+                color: '#778F9B'
             },
             nameTextStyle: {
-                color: '778F9B'
+                color: '#778F9B'
 
             }
         },
@@ -138,16 +138,16 @@ const Employment = () => {
             gridIndex: 0,
             axisLine: {
                 lineStyle: {
-                    color: '778F9B'
+                    color: '#778F9B'
                 }
             },
             axisTick: {
                 lineStyle: {
-                    color: '778F9B'
+                    color: '#778F9B'
                 }
             },
             axisLabel: {
-                color: '778F9B'
+                color: '#778F9B'
             }
         },
         series: [
