@@ -47,7 +47,7 @@ const Employment = () => {
         color: ['#F64B6D', '#624386', '#FED114','#434D88', '#B2033C',  '#FF8E32', '#78D7C1',  '#72272E', '#5EAFFF'],
         title: {
             text: 'Employment rate',
-            subtext: 'Employment rate of native and immigrant population by age group'
+            subtext: 'Employment rate of native and immigrant population by age group IR03'
         },
         legend: {
             bottom: 0,

@@ -10,8 +10,17 @@ $background: #F3F9FF;
 @import "../../_variables.sass";
 @import "../../../node_modules/bulma/bulma.sass";
 
-body {
+html {
   background: $background;
+}
+.hero {
+  height: 50vh;
+}
+.image {
+  display: inline-block;
+  width: 40%;
+  text-align: center;
+  margin-top: 200px;
 }
 .columns.is-fullheight {
   min-height:calc(100vh - ( #{$navbar-height} + 2rem - .75rem)  );
@@ -25,4 +34,12 @@ body {
     overflow-y: auto;
     overflow-x: hidden;
   }
+}
+
+.card {
+  height: 300px;
+}
+
+.card-content {
+  height: 100%;
 }
