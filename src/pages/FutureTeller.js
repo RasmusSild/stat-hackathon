@@ -45,7 +45,7 @@ const FutureTeller = () => {
               <Content>
                 <Heading size={4}>How many of us are employed?</Heading>
                 <Heading subtitle size={6}>
-                  Employment rate of native and immigrant population by age group IR03
+                  Employment rate of native and immigrant population by age group
             </Heading>
               </Content>
             </Card.Content>
@@ -57,7 +57,7 @@ const FutureTeller = () => {
               <Content>
                 <Heading size={4}>In which areas do we work?</Heading>
                 <Heading subtitle size={6}>
-                  Employed native population by econimic activity IR20
+                  Employed native population by econimic activity
             </Heading>
               </Content>
             </Card.Content>
@@ -68,7 +68,7 @@ const FutureTeller = () => {
               <Content>
                 <Heading size={4}>Where do immigrants work?</Heading>
                 <Heading subtitle size={6}>
-                  Employed immigration population by economic activity IR20
+                  Employed immigration population by economic activity
             </Heading>
               </Content>
             </Card.Content>

@@ -90,8 +90,14 @@ const SampleChart = () => {
                 data35,
             ]
         },
-        xAxis: {type: 'category'},
-        yAxis: {gridIndex: 0},
+        xAxis: {
+            type: 'category',
+            show: false,
+        },
+        yAxis: {
+            gridIndex: 0,
+            show: false,
+        },
         series: [
             {type: 'line', smooth: true, seriesLayoutBy: 'row',},
             {type: 'line', smooth: true, seriesLayoutBy: 'row',},
