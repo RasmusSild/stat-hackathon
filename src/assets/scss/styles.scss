@@ -11,7 +11,7 @@ $detail-height: 60vh;
 @import "../../../node_modules/bulma/bulma.sass";
 
 .body {
-  background-color: black;
+  background-color: $bg;
 }
 .columns.is-fullheight {
   min-height:calc(100vh - ( #{$navbar-height} + 2rem - .75rem)  );
