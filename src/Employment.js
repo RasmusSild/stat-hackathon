@@ -73,7 +73,7 @@ const Employment = () => {
     }
     const opts = {
         grid: {
-            bottom: "20",
+            bottom: "20%",
         },
         color: [
             '#F64B6D', '#FF8E32', '#FED114',
@@ -93,7 +93,7 @@ const Employment = () => {
             bottom: 0,
             height: 'auto',
             padding: [
-                40, 0, 20, 0
+                20, 0, 30, 0
             ]
         },
         tooltip: {
