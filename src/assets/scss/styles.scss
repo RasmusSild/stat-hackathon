@@ -17,14 +17,14 @@ html {
 }
 .hero {
   &:not(.is-dark) {
-    height: 400px;
+    height: 210px;
   }
   height: 100vh;
   .image {
     display: inline-block;
     width: 40%;
     text-align: center;
-    margin-top: 150px;
+    margin-top: -50px;
   }
   .title {
     margin-top: 250px;
