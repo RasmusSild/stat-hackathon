@@ -8,8 +8,10 @@ const Employment = () => {
     const blurRadius = 10;
     let coefficient = 1.005;
     let coefficient2 = 1.005;
+    let lastYear = 2018;
     const [inputValue, setInputValue] = React.useState(coefficient);
     const [inputValue2, setInputValue2] = React.useState(coefficient2);
+    const [tillYear, setYear] = React.useState(lastYear);
     let i = 0;
     let years = ['product', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018'];
     let _18_24data = ['Eestlaste tööhõivemäär: 18-24', 35.5, 28.0, 25.0, 30.6, 31.5, 31.8, 32.6, 35.7, 36.7, 39.7, 41.2];
@@ -24,7 +26,7 @@ const Employment = () => {
         return numberVal > 100 ? 100 : numberVal;
     }
 
-    while (i < 22) {
+    while (i < (tillYear- lastYear)) {
         years.push(((Number)(years[years.length - 1]) + 1).toFixed(0))
         _18_24data.push(calcNumber(_18_24data, inputValue));
         _25_49data.push(calcNumber(_25_49data, inputValue));
@@ -55,7 +57,6 @@ const Employment = () => {
         },
         xAxis: {type: 'category'},
         yAxis: {gridIndex: 0},
-        grid: {top: '55%'},
         series: [
             {
                 type: 'line', smooth: true, seriesLayoutBy: 'row', itemStyle: {
@@ -98,88 +99,12 @@ const Employment = () => {
                         shadowColor: shadowColor
                     }
                 },},
-            {
-                type: 'pie',
-                id: 'pie',
-                radius: '35%',
-                center: ['45%', '25%'],
-                roseType: 'angle',
-                itemStyle: {
-                    normal: {
-                        shadowBlur: blurRadius,
-                        shadowColor: shadowColor
-                    }
-                },
-                label: {
-                    formatter: '{b}: {@2008} ({d}%)'
-                },
-                encode: {
-                    itemName: 'product',
-                    value: '2008',
-                    tooltip: '2008'
-                },
-                data: [_18_24data, _25_49data, _50_74data]
-            },
-            {
-                type: 'pie',
-                id: 'pie2',
-                radius: '35%',
-                center: ['65%', '25%'],
-                roseType: 'angle',
-                itemStyle: {
-                    normal: {
-                        shadowBlur: blurRadius,
-                        shadowColor: shadowColor
-                    }
-                },
-                label: {
-                    formatter: '{b}: {@2008} ({d}%)'
-                },
-                encode: {
-                    itemName: 'product',
-                    value: '2008',
-                    tooltip: '2008'
-                },
-                data: [_18_24data2, _25_49data2, _50_74data2]
-            }
+
         ]
     }
 
     let onEvents = {
-        'updateAxisPointer': (event) => {
-            let xAxisInfo = event.axesInfo[0];
-            if (xAxisInfo) {
-                let dimension = xAxisInfo.value + 1;
-                chartRef.current.getEchartsInstance().setOption({
-                    series: {
-                        id: 'pie',
-                        label: {
-                            formatter: '{b}: {@[' + dimension + ']} ({d}%)'
-                        },
-                        encode: {
-                            value: dimension,
-                            tooltip: dimension
-                        }
-                    }
-                });
-            }
-            let xAxisInfo2 = event.axesInfo[0];
-            if (xAxisInfo2) {
-                let dimension = xAxisInfo2.value + 1;
-                chartRef.current.getEchartsInstance().setOption({
-                    series: {
-                        id: 'pie2',
-                        label: {
-                            formatter: '{b}: {@[' + dimension + ']} ({d}%)'
-                        },
-                        encode: {
-                            value: dimension,
-                            tooltip: dimension
-                        }
-                    }
-                });
-            }
-        }
+
     };
 
     return (
@@ -198,6 +123,13 @@ const Employment = () => {
                 <input className="input" step="0.005" type="number" value={inputValue2} id="coef2"
                        onChange={(evt) => setInputValue2(evt.target.value)}/>
               </div>
+            </div>
+            <div className="field">
+                <div className="control">
+                    <label className="label">Prognoosi aastani</label>
+                    <input className="input" step="1" type="number" value={tillYear} id="coef2"
+                           onChange={(evt) => setYear(evt.target.value)}/>
+                </div>
             </div>
         </div>
     )
