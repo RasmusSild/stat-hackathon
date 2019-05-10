@@ -71,8 +71,9 @@ html {
   }
   .chart {
     .echarts-for-react {
-    min-height: 700px;
-    height: 100%;
+    min-height: 60vh;
+    height: 60vh;
+    max-height: 100%;
     }
       }
     .thumbnail {

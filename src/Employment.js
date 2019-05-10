@@ -91,6 +91,7 @@ const Employment = () => {
         legend: {
             bottom: 0,
             height: 'auto',
+            color: '#ddd',
             padding: [
                 20, 0, 30, 0
             ]
