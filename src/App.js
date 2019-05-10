@@ -39,9 +39,6 @@ const App = () => (
             <Columns.Column size={6}>
                 <ForeignDomains/>
             </Columns.Column>
-            <Columns.Column size={12}>
-                <SampleChart2/>
-            </Columns.Column>
         </Columns>
         </Container>
 );
