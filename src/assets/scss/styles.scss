@@ -121,10 +121,3 @@ html {
 .card-content {
   height: 100%;
 }
-
-
-
-
-.select:not(.is-multiple):not(.is-loading)::after {
-  top: 100%;
-}
