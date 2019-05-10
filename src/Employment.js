@@ -81,7 +81,6 @@ const Employment = () => {
         ],
         title: {
             text: 'How many of us are employed?',
-            subtext: 'Employment rate of native and immigrant population by age group IR03',
             textStyle: {
                 fontSize: 32,
                 fontWeight: 400,
@@ -177,7 +176,7 @@ const Employment = () => {
                         <div className="control">
                             <label className="label">Number of new immigrant workers</label>
                             <input className="input" step="1000" type="number" value={newImmigrants} id="coef"
-                                onChange={(evt) => setInputValue(evt.target.value)} />
+                                   onChange={(evt) => setInputValue(evt.target.value)}/>
                         </div>
                     </div>
                 </Columns.Column>
@@ -186,7 +185,7 @@ const Employment = () => {
                         <div className="control">
                             <label className="label">Years</label>
                             <input className="input" step="1" type="number" value={tillYear} id="coef2"
-                                onChange={(evt) => setYear(evt.target.value)} />
+                                   onChange={(evt) => setYear(evt.target.value)}/>
                         </div>
                     </div>
                 </Columns.Column>
