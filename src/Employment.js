@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactEcharts from "echarts-for-react";
 
-const SampleChart = () => {
+const Employment = () => {
 
     const chartRef = React.useRef(null);
     const shadowColor = 'rgba(98, 67, 134, 0.3)';
     const blurRadius = 10;
-    let coefficient = 1.005
-    let coefficient2 = 1.005
+    let coefficient = 1.005;
+    let coefficient2 = 1.005;
     const [inputValue, setInputValue] = React.useState(coefficient);
     const [inputValue2, setInputValue2] = React.useState(coefficient2);
     let i = 0;
@@ -185,14 +185,22 @@ const SampleChart = () => {
     return (
         <div className="chart">
             <ReactEcharts ref={chartRef} option={opts} style={{height: "70vh"}} onEvents={onEvents}/>
-            <label for="coef">Eestlaste tööhõivemäära trend</label>
-            <input step="0.005" type="number" value={inputValue} id="coef"
-                   onChange={(evt) => setInputValue(evt.target.value)}/>
-            <label htmlFor="coef2">Välistööjõu tööhõivemäära trend</label>
-            <input step="0.005" type="number" value={inputValue2} id="coef"
-                   onChange={(evt) => setInputValue2(evt.target.value)}/>
+            <div className="field">
+              <div className="control">
+                <label className="label">Eestlaste tööhõivemäära trend</label>
+                <input className="input" step="0.005" type="number" value={inputValue} id="coef"
+                       onChange={(evt) => setInputValue(evt.target.value)}/>
+              </div>
+            </div>
+            <div className="field">
+              <div className="control">
+                <label className="label">Välistööjõu tööhõivemäära trend</label>
+                <input className="input" step="0.005" type="number" value={inputValue2} id="coef2"
+                       onChange={(evt) => setInputValue2(evt.target.value)}/>
+              </div>
+            </div>
         </div>
     )
 };
 
-export default SampleChart;
+export default Employment;

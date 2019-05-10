@@ -1,7 +1,9 @@
 import React from 'react';
-import SampleChart from './SampleChart';
-import SampleChart2Nat from './SampleChart2Nat';
-import SampleChart2Imm from './SampleChart2Imm';
+import Employment from './Employment';
+import NationalDomains from './NationalDomains';
+import NationalDomainsThumbnail from './NationalDomainsThumbnail';
+import ForeignDomains from './ForeignDomains';
+import ForeignDomainsThumbnail from './ForeignDomainsThumbnail';
 import SampleChart2 from './SampleChart2';
 import SampleChart3 from './SampleChart3';
 
@@ -19,23 +21,23 @@ const App = () => (
             <Columns.Column size={3}>
                 <Card>
                     <Card.Content>
-                        <SampleChart3/>
+                        <ForeignDomainsThumbnail/>
                     </Card.Content>
                 </Card>
                 <Card>
                     <Card.Content>
-                        <SampleChart3/>
+                        <NationalDomainsThumbnail/>
                     </Card.Content>
                 </Card>
             </Columns.Column>
             <Columns.Column size={9}>
-                <SampleChart/>
+                <Employment/>
             </Columns.Column>
             <Columns.Column size={6}>
-                <SampleChart2Nat/>
+                <NationalDomains/>
             </Columns.Column>
             <Columns.Column size={6}>
-                <SampleChart2Imm/>
+                <ForeignDomains/>
             </Columns.Column>
             <Columns.Column size={12}>
                 <SampleChart2/>
