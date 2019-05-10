@@ -1,7 +1,7 @@
 import React from 'react';
 import SampleChart from './SampleChart';
-import SampleChart2Nat from './SampleChart2Nat';
-import SampleChart2Imm from './SampleChart2Imm';
+import SampleChart2Nat from './NationalDomains';
+import SampleChart2Imm from './ForeignDomains';
 import SampleChart2 from './SampleChart2';
 import SampleChart3 from './SampleChart3';
 import {Container, Columns, Card} from "react-bulma-components/full";
