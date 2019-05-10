@@ -27,14 +27,14 @@ const FutureTeller = () => {
               <EmploymentThumbnail />
             </Card.Content>
           </Card>
-          <Card onClick={() => setActiveChart('fDomains')}>
-            <Card.Content>
-              <ForeignDomainsThumbnail />
-            </Card.Content>
-          </Card>
           <Card onClick={() => setActiveChart('nDomains')}>
             <Card.Content>
               <NationalDomainsThumbnail />
+            </Card.Content>
+          </Card>
+          <Card onClick={() => setActiveChart('fDomains')}>
+            <Card.Content>
+              <ForeignDomainsThumbnail />
             </Card.Content>
           </Card>
         </Columns.Column>
