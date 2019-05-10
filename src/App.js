@@ -6,7 +6,6 @@ const App = () => {
     const [activePage, setActivePage] = React.useState('landing');
 
     const onPageChange = (page) => {
-        console.log(page);
         setActivePage(page)
     }
 

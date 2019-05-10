@@ -28,7 +28,7 @@ const Landing = ({onChange}) => {
             What interests you most about the future?
           </Heading>
             <Heading subtitle size={3} renderAs="h2">
-              <Select onChange={onSelectChange} name="pageSelect" value={null}>
+              <Select onChange={onSelectChange} name="pageSelect" value={""}>
                 <option value="">Choose</option>
                 <option value="futureteller">Labour Market</option>
                 <option value="population">Population</option>

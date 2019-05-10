@@ -17,6 +17,9 @@ import Content from 'react-bulma-components/lib/components/content';
 const FutureTeller = () => {
 
   const [activeChart, setActiveChart] = React.useState('employment');
+  const onChange = ()=>{
+      return;
+  }
 
   return (
     <Container>
@@ -26,7 +29,7 @@ const FutureTeller = () => {
         </Columns.Column>
         <Columns.Column size={9}>
           <Heading size={3} renderAs="h2" >How your decisions will influence tomorrow's
-           <Select>
+           <Select value={"Labour Market"} onChange={onChange}>
               <option>Labour Market</option>
               <option>Population</option>
               <option>Salaries in Estonia</option>
